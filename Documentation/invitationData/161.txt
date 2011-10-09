@@ -1,0 +1,198 @@
+	
+
+<!--
+select si.ib_organisasjon, ro.ro_land 
+from soknad_innbydelse si, ranking_organisasjon ro 
+where si.ib_id = 161
+and ro.ro_id = si.ib_organisasjon-->ï»¿<!--
+select *
+from soknad_innbydelse_klasser
+where sik_siid = '161'
+and sik_orgid = 'NBF.NO.BM'--><!--
+Array
+(
+    [DDE] => DDE
+    [DSE] => DSE
+    [HDE] => HDE
+    [HSE] => HSE
+    [MDE] => MDE
+    [DDU13] => DDU13
+    [DSU13] => DSU13
+    [HDU13] => HDU13
+    [HSU13] => HSU13
+    [MDU13] => MDU13
+    [DDU17] => DDU17
+    [DSU17] => DSU17
+    [HDU17] => HDU17
+    [HSU17] => HSU17
+    [MDU17] => MDU17
+)
+--><!--
+Array
+(
+    [Senior] => Array
+        (
+            [E] => Array
+                (
+                    [DD] => DDE
+                    [DS] => DSE
+                    [HD] => HDE
+                    [HS] => HSE
+                    [MD] => MDE
+                )
+
+        )
+
+)
+--><html>
+<head>
+<script src='ajax.js'></script> 
+<script type='text/javascript' src='calendar/dhtmlgoodies_calendar.js'></script>
+<script type='text/javascript' src='calendar/behaviour.js'></script>
+<script>
+action_assoc_arr = [];
+action_assoc_arr[100] = "terminliste.php";
+action_assoc_arr[101] = "../pamelding/redirect.php?tknavn=kbkranking09";
+action_assoc_arr[102] = "../resultater/vis.php?turn=kbkranking09";
+ 
+function do_act(abbr)
+{
+    act = action_assoc_arr[abbr] 
+    er_func = act.indexOf('(')
+    
+    if (er_func != -1)
+        eval(act);
+    else
+        document.location = act;
+    
+}
+
+var myrules = 
+{
+    '.menu' : function(element)
+    {
+        element.onclick = function()
+        {
+             do_act(this.id);
+        },
+        element.onmouseover = function()
+        {
+            this.style.color = '#ffff80';   
+        },
+        element.onmouseout = function()
+        {
+            this.style.color = '#ffffff';   
+        }
+    } 
+};
+
+Behaviour.register(myrules);
+
+action_assoc_arr[100] = 'terminliste.php';
+
+
+</script>
+
+<style type='text/css'>
+@import 'style/menu_style.css';
+@import 'sok_style.css';
+td
+{
+    padding-right: 15px;
+    vertical-align: top;
+}
+.startkont
+{
+    
+    text-align:right;
+}
+
+td.tdk
+{
+    padding-right: 0px;
+
+}
+#klasser_span
+{
+    display: inline;
+}
+
+.uh
+{
+    font-weight:bold;
+}
+
+</style>
+
+
+</head>
+<body>
+<div class='toparea'>
+<img src='logoer/NBF.NO.BM.png'>
+<table class='tmenu' cellspacing='0'>
+    <tr>
+        <td class='tdmenu'><span class='menu' id='100'>&nbsp;&nbsp;Terminliste</span>
+        <span class='menu' id='101'>&nbsp;&nbsp;PÃ¥melding</span>
+        <span class='menu' id='102'>&nbsp;&nbsp;Oppsett og resultater</span>
+        </td>
+    </tr>
+    <tr>
+        <td class='sub'> &nbsp;</td>
+    </tr>
+    </table>
+</div>
+<p>
+<table>
+<form method='post' action='soknad_innbydelse_upd.php' name='skjema'>
+
+<tr><td class='uh'>Arrangement</td><td>September Ranking U13 + U17 + NR</td></tr>
+<tr><td class='uh'>ArrangÃ¸r</td><td>Kristiansand Badmintonklubb</td></tr>
+<tr><td class='uh'>Spillested/hall</td><td>Badmintonsenteret</td></tr>
+<tr><td class='uh'>Dato</td>
+    <td>
+        <table><tr><td  class='uh'>Fra: </td><td>18.09.2009</td><td class='uh'>Til:</td><td>20.09.2009</td></tr>
+                <tr><td class='uh'>kl.: </td><td>18:00</td><td class='uh'>ca kl.:</td><td>15:00</td></tr>
+        </table>
+    </td>
+</tr> 
+<tr><td class='uh'>NivÃ¥</td><td><table>
+<tr><td class='uh'>Aldersbestemt:</td><td>Ranking U13-19, Svenske</td><tr>
+<tr><td class='uh'>Senior:</td><td>NR, Dansk A, Svensk GP</td><tr>
+</table>
+</td></tr> 
+<tr><td class='uh'>Klasser og kategorier</td><td><table class='klasser'>
+<tr>
+<td>
+<table><tr><td class='tdk uh' colspan='6'>Senior</td></tr>
+<tr><td class='tdk uh'>E</td><td class='tdk'>DD</td><td class='tdk'>DS</td><td class='tdk'>HD</td><td class='tdk'>HS</td><td class='tdk'>MD</td></tr></table>
+</td>
+</tr>
+</table></td></tr>
+          
+ 
+<tr><td class='uh'>Klassedetaljer</td><td><table><tr><td>&nbsp;</td><td class='startkont uh'>Ball</td><td class='startkont uh'>Startkont.&nbsp;Single</td><td class='startkont uh'>Double</td></tr>
+<tr><td class='uh'>E</td><td>Forza Tournament</td><td class='startkont'>250.00</td><td class='startkont'>250.00</td></tr>
+</table>
+</td></tr>
+
+<tr><td class='uh'>Innbetalingsinfo</td><td>Innbetaling: Samtidig med påmeldingen til kto.nr.: 3060.17.70799.Til: Kristiansand BK, Postboks 349, 4663 Kristiansand S.</td></tr>
+<tr><td class='uh'>Premieringsalternativ</td><td>3A</td></tr>
+<tr><td class='uh'>PÃ¥meldingsfrist</td><td>08.09.2009</td></tr>
+<!--tr><td class='uh'>NettpÃ¥melding</td><td>kbkranking09</td></tr -->
+
+<tr><td class='uh'>Kontaktinformasjon</td>
+<td>
+    <table> <tr><td></td><td class='uh'>Turneringsleder</td><td class='uh'>Oppmann</td></tr>
+            <tr><td class='uh'>Navn</td><td>Knut Abusdal</td><td></td></tr>
+            <tr><td class='uh'>Telefon</td><td>90649189</td><td></td></tr>
+            <tr><td class='uh'>Epost</td><td>k-abusd@online.no</td><td></td></tr>
+    </table>
+</td>
+</tr>
+                                                                       
+<tr><td class='uh'>Annen info</td><td>2 baller pr. kamp. Frie baller i finalene. Overnatting (4 til 8 sengers rom) i Badmintonsenterets internat bestilles samtidig med påmeldingen og da til Svein Træland, e-post: svtrae@online.no . Vennligst oppgi antatt ankomsttidspunkt. Pris pr. seng pr. natt ekslusive sengetøy kr. 125,-. Sengetøy kan leies for kr. 75,-. For øvrig kan vi anbefale Hotel Norge: www.hotel-norge.no Vi ønsker ALLE hjertelig velkommen til Kristiansand</td></tr>
+    
+</table>
+
+</body>
+</html>

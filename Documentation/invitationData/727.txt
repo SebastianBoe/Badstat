@@ -1,0 +1,219 @@
+	
+
+<!--
+select si.ib_organisasjon, ro.ro_land 
+from soknad_innbydelse si, ranking_organisasjon ro 
+where si.ib_id = 727
+and ro.ro_id = si.ib_organisasjon-->ï»¿<!--
+select *
+from soknad_innbydelse_klasser
+where sik_siid = '727'
+and sik_orgid = 'NBF.NO.BM'--><!--
+Array
+(
+    [HSE] => HSE
+    [DSE] => DSE
+    [HSD] => HSD
+    [DSD] => DSD
+    [HSC] => HSC
+    [DSC] => DSC
+    [HSB] => HSB
+    [DSB] => DSB
+    [HSA] => HSA
+    [DSA] => DSA
+)
+--><!--
+Array
+(
+    [Senior] => Array
+        (
+            [A] => Array
+                (
+                    [DS] => DSA
+                    [HS] => HSA
+                )
+
+            [B] => Array
+                (
+                    [DS] => DSB
+                    [HS] => HSB
+                )
+
+            [C] => Array
+                (
+                    [DS] => DSC
+                    [HS] => HSC
+                )
+
+            [D] => Array
+                (
+                    [DS] => DSD
+                    [HS] => HSD
+                )
+
+            [E] => Array
+                (
+                    [DS] => DSE
+                    [HS] => HSE
+                )
+
+        )
+
+)
+--><html>
+<head>
+<script src='ajax.js'></script> 
+<script type='text/javascript' src='calendar/dhtmlgoodies_calendar.js'></script>
+<script type='text/javascript' src='calendar/behaviour.js'></script>
+<script>
+action_assoc_arr = [];
+action_assoc_arr[100] = "terminliste.php";
+action_assoc_arr[101] = "../pamelding/redirect.php?tknavn=ntnuiopen2011";
+action_assoc_arr[102] = "../resultater/vis.php?turn=ntnuiopen2011";
+ 
+function do_act(abbr)
+{
+    act = action_assoc_arr[abbr] 
+    er_func = act.indexOf('(')
+    
+    if (er_func != -1)
+        eval(act);
+    else
+        document.location = act;
+    
+}
+
+var myrules = 
+{
+    '.menu' : function(element)
+    {
+        element.onclick = function()
+        {
+             do_act(this.id);
+        },
+        element.onmouseover = function()
+        {
+            this.style.color = '#ffff80';   
+        },
+        element.onmouseout = function()
+        {
+            this.style.color = '#ffffff';   
+        }
+    } 
+};
+
+Behaviour.register(myrules);
+
+action_assoc_arr[100] = 'terminliste.php';
+
+
+</script>
+
+<style type='text/css'>
+@import 'style/menu_style.css';
+@import 'sok_style.css';
+td
+{
+    padding-right: 15px;
+    vertical-align: top;
+}
+.startkont
+{
+    
+    text-align:right;
+}
+
+td.tdk
+{
+    padding-right: 0px;
+
+}
+#klasser_span
+{
+    display: inline;
+}
+
+.uh
+{
+    font-weight:bold;
+}
+
+</style>
+
+
+</head>
+<body>
+<div class='toparea'>
+<img src='logoer/NBF.NO.BM.png'>
+<table class='tmenu' cellspacing='0'>
+    <tr>
+        <td class='tdmenu'><span class='menu' id='100'>&nbsp;&nbsp;Terminliste</span>
+        <span class='menu' id='101'>&nbsp;&nbsp;PÃ¥melding</span>
+        <span class='menu' id='102'>&nbsp;&nbsp;Oppsett og resultater</span>
+        </td>
+    </tr>
+    <tr>
+        <td class='sub'> &nbsp;</td>
+    </tr>
+    </table>
+</div>
+<p>
+<table>
+<form method='post' action='soknad_innbydelse_upd.php' name='skjema'>
+
+<tr><td class='uh'>Arrangement</td><td>NTNUI Open 2011</td></tr>
+<tr><td class='uh'>ArrangÃ¸r</td><td>NTNUI Badminton</td></tr>
+<tr><td class='uh'>Spillested/hall</td><td>Dragvoll Idrettssenter</td></tr>
+<tr><td class='uh'>Dato</td>
+    <td>
+        <table><tr><td  class='uh'>Fra: </td><td>12.03.2011</td><td class='uh'>Til:</td><td>12.03.2011</td></tr>
+                <tr><td class='uh'>kl.: </td><td>0900</td><td class='uh'>ca kl.:</td><td>1800</td></tr>
+        </table>
+    </td>
+</tr> 
+<tr><td class='uh'>NivÃ¥</td><td><table>
+<tr><td class='uh'>Senior:</td><td>A, B, C, D og E</td><tr>
+</table>
+</td></tr> 
+<tr><td class='uh'>Klasser og kategorier</td><td><table class='klasser'>
+<tr>
+<td>
+<table><tr><td class='tdk uh' colspan='3'>Senior</td></tr>
+<tr><td class='tdk uh'>A</td><td class='tdk'>DS</td><td class='tdk'>HS</td></tr><tr><td class='tdk uh'>B</td><td class='tdk'>DS</td><td class='tdk'>HS</td></tr><tr><td class='tdk uh'>C</td><td class='tdk'>DS</td><td class='tdk'>HS</td></tr><tr><td class='tdk uh'>D</td><td class='tdk'>DS</td><td class='tdk'>HS</td></tr><tr><td class='tdk uh'>E</td><td class='tdk'>DS</td><td class='tdk'>HS</td></tr></table>
+</td>
+</tr>
+</table></td></tr>
+          
+ 
+<tr><td class='uh'>Klassedetaljer</td><td><table><tr><td>&nbsp;</td><td class='startkont uh'>Ball</td><td class='startkont uh'>Startkont.&nbsp;Single</td><td class='startkont uh'>Double</td></tr>
+<tr><td class='uh'>A</td><td>RSL Classic Tourney</td><td class='startkont'>150.00</td><td class='startkont'>0.00</td></tr>
+<tr><td class='uh'>B</td><td>RSL Classic Tourney</td><td class='startkont'>150.00</td><td class='startkont'>0.00</td></tr>
+<tr><td class='uh'>C</td><td>RSL Classic Tourney</td><td class='startkont'>150.00</td><td class='startkont'>0.00</td></tr>
+<tr><td class='uh'>D</td><td>RSL Classic Tourney</td><td class='startkont'>150.00</td><td class='startkont'>0.00</td></tr>
+<tr><td class='uh'>E</td><td>RSL Classic Tourney</td><td class='startkont'>150.00</td><td class='startkont'>0.00</td></tr>
+</table>
+</td></tr>
+
+<tr><td class='uh'>Innbetalingsinfo</td><td>Ved turneringsstart i hallen. Faktura kan ettersendes klubbvis. 
+Obs! Alle spillere må registrere seg i sekreteriatet FØR turneringsstart klokken 0900 da dette er en Swiss-ladder turnering.</td></tr>
+<tr><td class='uh'>Premieringsalternativ</td><td>3a</td></tr>
+<tr><td class='uh'>PÃ¥meldingsfrist</td><td>08.03.2011</td></tr>
+<!--tr><td class='uh'>NettpÃ¥melding</td><td>ntnuiopen2011</td></tr -->
+
+<tr><td class='uh'>Kontaktinformasjon</td>
+<td>
+    <table> <tr><td></td><td class='uh'>Turneringsleder</td><td class='uh'>Oppmann</td></tr>
+            <tr><td class='uh'>Navn</td><td>Eirik Brevik</td><td>Sebastian Bøe</td></tr>
+            <tr><td class='uh'>Telefon</td><td>92850589</td><td>94893711</td></tr>
+            <tr><td class='uh'>Epost</td><td>eirik.brevik@gmail.com</td><td>sebastianbooe@gmail.com</td></tr>
+    </table>
+</td>
+</tr>
+                                                                       
+<tr><td class='uh'>Annen info</td><td>Kiosksalg i hallen.<br>
+Det vil ikke bli lagt ut trekning før turneringsstart. Antall runder vil være 5, eventuelt 6 ved lav påmelding. På kvelden arrangeres det fest for deltakere over 18 år.</td></tr>
+    
+</table>
+
+</body>
+</html>

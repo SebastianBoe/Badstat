@@ -1,0 +1,226 @@
+	
+
+<!--
+select si.ib_organisasjon, ro.ro_land 
+from soknad_innbydelse si, ranking_organisasjon ro 
+where si.ib_id = 211
+and ro.ro_id = si.ib_organisasjon-->﻿<!--
+select *
+from soknad_innbydelse_klasser
+where sik_siid = '211'
+and sik_orgid = 'NBF.NO.BM'--><!--
+Array
+(
+    [HSU9] => HSU9
+    [HDU9] => HDU9
+    [DSU9] => DSU9
+    [DDU9] => DDU9
+    [HSU19] => HSU19
+    [HDU19] => HDU19
+    [DSU19] => DSU19
+    [DDU19] => DDU19
+    [HSU17N] => HSU17N
+    [HDU17N] => HDU17N
+    [DSU17N] => DSU17N
+    [DDU17N] => DDU17N
+    [HSU17] => HSU17
+    [HDU17] => HDU17
+    [DSU17] => DSU17
+    [DDU17] => DDU17
+    [HSU15N] => HSU15N
+    [HDU15N] => HDU15N
+    [DSU15N] => DSU15N
+    [DDU15N] => DDU15N
+    [HSU15] => HSU15
+    [HDU15] => HDU15
+    [DSU15] => DSU15
+    [DDU15] => DDU15
+    [HSU13N] => HSU13N
+    [HDU13N] => HDU13N
+    [DSU13N] => DSU13N
+    [DDU13N] => DDU13N
+    [HSU13] => HSU13
+    [HDU13] => HDU13
+    [DSU13] => DSU13
+    [DDU13] => DDU13
+    [HSU11N] => HSU11N
+    [HDU11N] => HDU11N
+    [DSU11N] => DSU11N
+    [DDU11N] => DDU11N
+    [HSU11] => HSU11
+    [HDU11] => HDU11
+    [DSU11] => DSU11
+    [DDU11] => DDU11
+    [HSD] => HSD
+    [HDD] => HDD
+    [DSD] => DSD
+    [DDD] => DDD
+)
+--><!--
+Array
+(
+    [Senior] => Array
+        (
+            [D] => Array
+                (
+                    [DD] => DDD
+                    [DS] => DSD
+                    [HD] => HDD
+                    [HS] => HSD
+                )
+
+        )
+
+)
+--><html>
+<head>
+<script src='ajax.js'></script> 
+<script type='text/javascript' src='calendar/dhtmlgoodies_calendar.js'></script>
+<script type='text/javascript' src='calendar/behaviour.js'></script>
+<script>
+action_assoc_arr = [];
+action_assoc_arr[100] = "terminliste.php";
+action_assoc_arr[101] = "../pamelding/redirect.php?tknavn=ffbmil2010";
+action_assoc_arr[102] = "../resultater/vis.php?turn=ffbmil2010";
+ 
+function do_act(abbr)
+{
+    act = action_assoc_arr[abbr] 
+    er_func = act.indexOf('(')
+    
+    if (er_func != -1)
+        eval(act);
+    else
+        document.location = act;
+    
+}
+
+var myrules = 
+{
+    '.menu' : function(element)
+    {
+        element.onclick = function()
+        {
+             do_act(this.id);
+        },
+        element.onmouseover = function()
+        {
+            this.style.color = '#ffff80';   
+        },
+        element.onmouseout = function()
+        {
+            this.style.color = '#ffffff';   
+        }
+    } 
+};
+
+Behaviour.register(myrules);
+
+action_assoc_arr[100] = 'terminliste.php';
+
+
+</script>
+
+<style type='text/css'>
+@import 'style/menu_style.css';
+@import 'sok_style.css';
+td
+{
+    padding-right: 15px;
+    vertical-align: top;
+}
+.startkont
+{
+    
+    text-align:right;
+}
+
+td.tdk
+{
+    padding-right: 0px;
+
+}
+#klasser_span
+{
+    display: inline;
+}
+
+.uh
+{
+    font-weight:bold;
+}
+
+</style>
+
+
+</head>
+<body>
+<div class='toparea'>
+<img src='logoer/NBF.NO.BM.png'>
+<table class='tmenu' cellspacing='0'>
+    <tr>
+        <td class='tdmenu'><span class='menu' id='100'>&nbsp;&nbsp;Terminliste</span>
+        <span class='menu' id='101'>&nbsp;&nbsp;Påmelding</span>
+        <span class='menu' id='102'>&nbsp;&nbsp;Oppsett og resultater</span>
+        </td>
+    </tr>
+    <tr>
+        <td class='sub'> &nbsp;</td>
+    </tr>
+    </table>
+</div>
+<p>
+<table>
+<form method='post' action='soknad_innbydelse_upd.php' name='skjema'>
+
+<tr><td class='uh'>Arrangement</td><td>Ferske Fjes</td></tr>
+<tr><td class='uh'>Arrangør</td><td>Bygd� Monolitten Idrettslag</td></tr>
+<tr><td class='uh'>Spillested/hall</td><td>Sk�yenhallen</td></tr>
+<tr><td class='uh'>Dato</td>
+    <td>
+        <table><tr><td  class='uh'>Fra: </td><td>06.03.2010</td><td class='uh'>Til:</td><td>07.03.2010</td></tr>
+                <tr><td class='uh'>kl.: </td><td>0900</td><td class='uh'>ca kl.:</td><td>1800</td></tr>
+        </table>
+    </td>
+</tr> 
+<tr><td class='uh'>Nivå</td><td><table>
+<tr><td class='uh'>Aldersbestemt:</td><td>Vanlig turnering</td><tr>
+<tr><td class='uh'>Senior:</td><td>D</td><tr>
+</table>
+</td></tr> 
+<tr><td class='uh'>Klasser og kategorier</td><td><table class='klasser'>
+<tr>
+<td>
+<table><tr><td class='tdk uh' colspan='5'>Senior</td></tr>
+<tr><td class='tdk uh'>D</td><td class='tdk'>DD</td><td class='tdk'>DS</td><td class='tdk'>HD</td><td class='tdk'>HS</td></tr></table>
+</td>
+</tr>
+</table></td></tr>
+          
+ 
+<tr><td class='uh'>Klassedetaljer</td><td><table><tr><td>&nbsp;</td><td class='startkont uh'>Ball</td><td class='startkont uh'>Startkont.&nbsp;Single</td><td class='startkont uh'>Double</td></tr>
+<tr><td class='uh'>D</td><td> </td><td class='startkont'>100.00</td><td class='startkont'>100.00</td></tr>
+</table>
+</td></tr>
+
+<tr><td class='uh'>Innbetalingsinfo</td><td>Faktura sendes ut etter turneringen</td></tr>
+<tr><td class='uh'>Premieringsalternativ</td><td>3a</td></tr>
+<tr><td class='uh'>Påmeldingsfrist</td><td>19.02.2010</td></tr>
+<!--tr><td class='uh'>Nettpåmelding</td><td>ffbmil2010</td></tr -->
+
+<tr><td class='uh'>Kontaktinformasjon</td>
+<td>
+    <table> <tr><td></td><td class='uh'>Turneringsleder</td><td class='uh'>Oppmann</td></tr>
+            <tr><td class='uh'>Navn</td><td>Jeanette Svendsen</td><td>Emma Lindquist</td></tr>
+            <tr><td class='uh'>Telefon</td><td>91756422</td><td>41496971</td></tr>
+            <tr><td class='uh'>Epost</td><td>svendsen.jeanette@gmail.com</td><td>emma.lindquist@nif.idrett.no</td></tr>
+    </table>
+</td>
+</tr>
+                                                                       
+<tr><td class='uh'>Annen info</td><td></td></tr>
+    
+</table>
+
+</body>
+</html>

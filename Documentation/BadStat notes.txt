@@ -1,0 +1,132 @@
+BadStat
+
+Delsystemer
+Data collector, views, models
+
+Data flow
+Hierarkisk
+Data collector --> models --> views
+
+User requests url --> views --> model --> Database
+Datacollector --> Database
+
+User classifications:
+Personal statistics guy = Bob
+General statistics guy
+Check out the draw guy
+Travel to Tournament planner guy
+Find cool tournament to travel to guy
+
+Use cases:
+In order of completion.
+
+Check out persons statistics
+Goal level: Sea level
+
+Main success scenario:
+0. Bob enters the site
+1. Bob enters a name
+2. System presents information about the name
+
+Extensions:
+1a: Bob has a cookie
+.1: System presents the page corresponding to the most frequent player input that his cookie gave
+
+1b: Bob is sending from an IP that corresponds to a tournament held nearby
+.1: System presents the page for that tournament
+
+1c: Bob is sending from an IP that corresponds to a Club nearby AND scenario b did not occur.
+.1: System presents the page for that club
+
+
+
+Progress:
+Tournament invitations: tested all upto 200
+
+Oppdagede navnnotasjoner:
+if trekning:
+    if double:
+        F. Mellomnavn Etternavn OR
+        Etternavn, Fornavn Mellomnavn OR
+        Fornavn Mellomnavn Etternavn
+    elif single:
+        Fornavn Etternavn OR
+        [M., Mellomnavn], Fornavn OR
+        Etternavn, Fornavn Mellomnavn
+    
+if påmeldingsliste:
+    if singel:
+        Etternavn, Fornavn Mellomnavn
+        Mellomnavn E., Fornavn
+    elif double:
+        Etternavn, Fornavn [M. , Mellomnavn]
+
+Dersom en fjerner kommaet,
+og setter strengen som var etter kommaet foran hele strengen får vi:
+
+if trekning:
+    if double:
+        [F., Fornavn] Mellomnavn Etternavn
+    elif singel:
+        Fornavn [M., Mellomnavn] Etternavn
+
+if påmeldingsliste:
+    if singel:
+        Fornavn Mellomnavn [Etternavn, E.]
+    if double:
+        Fornavn [M., Mellomnavn] Etternavn
+
+SPILLERNAVN-------------------------------------------------------------
+
+Generelt så tror jeg det gjelder at vi har Fornavn Mellomnavn Etternavn
+1 eller 0 av subnavnene skal forkortes til første bokstav og en punktum.
+Navnet kan bestå av vilkårlig antall subnavn
+
+Navnet i trekningen trenger ikke være på samme form som på påmeldingslisten.
+Navnet har noen ganger mer info på påmeldingslisten. En trenger derfor å kryssreferere
+den for å finne ut hvem dette er.
+
+KLUBBNAVN---------------------------------------------------------------
+Navnet på en klubb er forskjellig fra innbydelse til påmeldingsliste
+En klubb har en kortnavn og et langt navn.
+kan manuelt mappe de to tror jeg.
+
+KAMPFORMAT--------------------------------------------------------------
+Dersom en spiller blir for lang å skrive kuttes slutten. Løsning er derfor å kryssrefere med
+påmeldingslisten.
+En spillers navn kan etterfølges av en parenthisized kort klubbnavn (sjeldent).
+
+PÅMELDINGSLISTE---------------------------------------------------------
+Klassen i påmeldingslisten samsvarer ikke nødvendigvis med den i trekningen.
+
+
+MVC struktur
+Ser for meg at et søk på f.eks [Sebastian Bøe " Treffpunkt] vil videresende deg først til, via submit knappen, /decode/?q=Sebastian Bøe (delimiter=") Treffpunkt.
+Regex vil parse ut queryet og sende det til views.decode. 
+
+if entydig og korrekt skrevet query
+	så vil decode httpRedirecte til dit den skal.
+else 
+	så vil feilen bli analysert og en passende feilmelding vil vises.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

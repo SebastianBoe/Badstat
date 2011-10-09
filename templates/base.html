@@ -1,0 +1,38 @@
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN">
+<html lang="en">
+    <head>
+
+        <script type="text/javascript">
+            window.onload = function ()
+            {
+                // focus on the input field for easy access...
+                var input = document.getElementById ('search_field_id');
+                input.focus ();
+                // ...but if someone wishes to go back in their history, let them!
+                document.onkeydown = function (e)
+                {
+                    if (!e)
+                    {
+                        var e = window.event;
+                    }
+                    if (e.keyCode === 8 && !input.value)
+                    {
+                        history.back();
+                    }
+                };
+            };
+
+        </script>
+
+        <link href="foo.css" />
+        <style type="text/css ">
+            body {text-align: center;}
+        </style>
+        <title>{% block title %}{% endblock %}</title>
+    </head>
+    <body>
+        <h1>Badstat</h1>
+        {% block content %}{% endblock %}
+    </body>
+</html>

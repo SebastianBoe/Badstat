@@ -1,0 +1,326 @@
+	
+
+<!--
+select si.ib_organisasjon, ro.ro_land 
+from soknad_innbydelse si, ranking_organisasjon ro 
+where si.ib_id = 687
+and ro.ro_id = si.ib_organisasjon-->ï»¿<!--
+select *
+from soknad_innbydelse_klasser
+where sik_siid = '687'
+and sik_orgid = 'NBF.NO.BM'--><!--
+Array
+(
+    [MDU11A] => MDU11A
+    [HSU11A] => HSU11A
+    [HDU11A] => HDU11A
+    [DSU11A] => DSU11A
+    [DDU11A] => DDU11A
+    [MDU19A] => MDU19A
+    [HSU19A] => HSU19A
+    [HDU19A] => HDU19A
+    [DSU19A] => DSU19A
+    [DDU19A] => DDU19A
+    [MDU17A] => MDU17A
+    [HSU17A] => HSU17A
+    [HDU17A] => HDU17A
+    [DSU17A] => DSU17A
+    [DDU17A] => DDU17A
+    [MDU15A] => MDU15A
+    [HSU15A] => HSU15A
+    [HDU15A] => HDU15A
+    [DSU15A] => DSU15A
+    [DDU15A] => DDU15A
+    [MDU13A] => MDU13A
+    [HSU13A] => HSU13A
+    [HDU13A] => HDU13A
+    [DSU13A] => DSU13A
+    [DDU13A] => DDU13A
+    [MDE] => MDE
+    [HSE] => HSE
+    [HDE] => HDE
+    [DSE] => DSE
+    [DDE] => DDE
+    [MDC] => MDC
+    [HSC] => HSC
+    [HDC] => HDC
+    [DSC] => DSC
+    [DDC] => DDC
+    [MDB] => MDB
+    [HSB] => HSB
+    [HDB] => HDB
+    [DSB] => DSB
+    [DDB] => DDB
+    [MDA] => MDA
+    [HSA] => HSA
+    [HDA] => HDA
+    [DSA] => DSA
+    [DDA] => DDA
+)
+--><!--
+Array
+(
+    [Senior] => Array
+        (
+            [A] => Array
+                (
+                    [DD] => DDA
+                    [DS] => DSA
+                    [HD] => HDA
+                    [HS] => HSA
+                    [MD] => MDA
+                )
+
+            [B] => Array
+                (
+                    [DD] => DDB
+                    [DS] => DSB
+                    [HD] => HDB
+                    [HS] => HSB
+                    [MD] => MDB
+                )
+
+            [C] => Array
+                (
+                    [DD] => DDC
+                    [DS] => DSC
+                    [HD] => HDC
+                    [HS] => HSC
+                    [MD] => MDC
+                )
+
+            [E] => Array
+                (
+                    [DD] => DDE
+                    [DS] => DSE
+                    [HD] => HDE
+                    [HS] => HSE
+                    [MD] => MDE
+                )
+
+        )
+
+    [Aldersbestemt] => Array
+        (
+            [U13A] => Array
+                (
+                    [DD] => DDU13A
+                    [DS] => DSU13A
+                    [HD] => HDU13A
+                    [HS] => HSU13A
+                    [MD] => MDU13A
+                )
+
+            [U15A] => Array
+                (
+                    [DD] => DDU15A
+                    [DS] => DSU15A
+                    [HD] => HDU15A
+                    [HS] => HSU15A
+                    [MD] => MDU15A
+                )
+
+            [U17A] => Array
+                (
+                    [DD] => DDU17A
+                    [DS] => DSU17A
+                    [HD] => HDU17A
+                    [MD] => MDU17A
+                    [HS] => HSU17A
+                )
+
+            [U19A] => Array
+                (
+                    [DD] => DDU19A
+                    [DS] => DSU19A
+                    [HD] => HDU19A
+                    [HS] => HSU19A
+                    [MD] => MDU19A
+                )
+
+            [U11A] => Array
+                (
+                    [DS] => DSU11A
+                    [HD] => HDU11A
+                    [MD] => MDU11A
+                    [HS] => HSU11A
+                    [DD] => DDU11A
+                )
+
+        )
+
+)
+--><html>
+<head>
+<script src='ajax.js'></script> 
+<script type='text/javascript' src='calendar/dhtmlgoodies_calendar.js'></script>
+<script type='text/javascript' src='calendar/behaviour.js'></script>
+<script>
+action_assoc_arr = [];
+action_assoc_arr[100] = "terminliste.php";
+action_assoc_arr[101] = "../pamelding/redirect.php?tknavn=km2011btv";
+action_assoc_arr[102] = "../resultater/vis.php?turn=km2011btv";
+ 
+function do_act(abbr)
+{
+    act = action_assoc_arr[abbr] 
+    er_func = act.indexOf('(')
+    
+    if (er_func != -1)
+        eval(act);
+    else
+        document.location = act;
+    
+}
+
+var myrules = 
+{
+    '.menu' : function(element)
+    {
+        element.onclick = function()
+        {
+             do_act(this.id);
+        },
+        element.onmouseover = function()
+        {
+            this.style.color = '#ffff80';   
+        },
+        element.onmouseout = function()
+        {
+            this.style.color = '#ffffff';   
+        }
+    } 
+};
+
+Behaviour.register(myrules);
+
+action_assoc_arr[100] = 'terminliste.php';
+
+
+</script>
+
+<style type='text/css'>
+@import 'style/menu_style.css';
+@import 'sok_style.css';
+td
+{
+    padding-right: 15px;
+    vertical-align: top;
+}
+.startkont
+{
+    
+    text-align:right;
+}
+
+td.tdk
+{
+    padding-right: 0px;
+
+}
+#klasser_span
+{
+    display: inline;
+}
+
+.uh
+{
+    font-weight:bold;
+}
+
+</style>
+
+
+</head>
+<body>
+<div class='toparea'>
+<img src='logoer/NBF.NO.BM.png'>
+<table class='tmenu' cellspacing='0'>
+    <tr>
+        <td class='tdmenu'><span class='menu' id='100'>&nbsp;&nbsp;Terminliste</span>
+        <span class='menu' id='101'>&nbsp;&nbsp;PÃ¥melding</span>
+        <span class='menu' id='102'>&nbsp;&nbsp;Oppsett og resultater</span>
+        </td>
+    </tr>
+    <tr>
+        <td class='sub'> &nbsp;</td>
+    </tr>
+    </table>
+</div>
+<p>
+<table>
+<form method='post' action='soknad_innbydelse_upd.php' name='skjema'>
+
+<tr><td class='uh'>Arrangement</td><td>KM 2011 BTV Krets</td></tr>
+<tr><td class='uh'>ArrangÃ¸r</td><td>Nøtterøy Badmintonklubb</td></tr>
+<tr><td class='uh'>Spillested/hall</td><td>Hårkollhallen  - Nøtterøy</td></tr>
+<tr><td class='uh'>Dato</td>
+    <td>
+        <table><tr><td  class='uh'>Fra: </td><td>29.01.2011</td><td class='uh'>Til:</td><td>30.01.2011</td></tr>
+                <tr><td class='uh'>kl.: </td><td>15.00</td><td class='uh'>ca kl.:</td><td></td></tr>
+        </table>
+    </td>
+</tr> 
+<tr><td class='uh'>NivÃ¥</td><td><table>
+<tr><td class='uh'>Aldersbestemt:</td><td>Vanlig turnering</td><tr>
+<tr><td class='uh'>Senior:</td><td>A, B, C, D og E</td><tr>
+</table>
+</td></tr> 
+<tr><td class='uh'>Klasser og kategorier</td><td><table class='klasser'>
+<tr>
+<td>
+<table><tr><td class='tdk uh' colspan='6'>Senior</td></tr>
+<tr><td class='tdk uh'>A</td><td class='tdk'>DD</td><td class='tdk'>DS</td><td class='tdk'>HD</td><td class='tdk'>HS</td><td class='tdk'>MD</td></tr><tr><td class='tdk uh'>B</td><td class='tdk'>DD</td><td class='tdk'>DS</td><td class='tdk'>HD</td><td class='tdk'>HS</td><td class='tdk'>MD</td></tr><tr><td class='tdk uh'>C</td><td class='tdk'>DD</td><td class='tdk'>DS</td><td class='tdk'>HD</td><td class='tdk'>HS</td><td class='tdk'>MD</td></tr><tr><td class='tdk uh'>E</td><td class='tdk'>DD</td><td class='tdk'>DS</td><td class='tdk'>HD</td><td class='tdk'>HS</td><td class='tdk'>MD</td></tr></table>
+</td>
+<td>
+<table><tr><td class='tdk uh' colspan='6'>Aldersbestemt</td></tr>
+<tr><td class='tdk uh'>U13A</td><td class='tdk'>DD</td><td class='tdk'>DS</td><td class='tdk'>HD</td><td class='tdk'>HS</td><td class='tdk'>MD</td></tr><tr><td class='tdk uh'>U15A</td><td class='tdk'>DD</td><td class='tdk'>DS</td><td class='tdk'>HD</td><td class='tdk'>HS</td><td class='tdk'>MD</td></tr><tr><td class='tdk uh'>U17A</td><td class='tdk'>DD</td><td class='tdk'>DS</td><td class='tdk'>HD</td><td class='tdk'>HS</td><td class='tdk'>MD</td></tr><tr><td class='tdk uh'>U19A</td><td class='tdk'>DD</td><td class='tdk'>DS</td><td class='tdk'>HD</td><td class='tdk'>HS</td><td class='tdk'>MD</td></tr><tr><td class='tdk uh'>U11A</td><td class='tdk'>DD</td><td class='tdk'>DS</td><td class='tdk'>HD</td><td class='tdk'>HS</td><td class='tdk'>MD</td></tr></table>
+</td>
+</tr>
+</table></td></tr>
+          
+ 
+<tr><td class='uh'>Klassedetaljer</td><td><table><tr><td>&nbsp;</td><td class='startkont uh'>Ball</td><td class='startkont uh'>Startkont.&nbsp;Single</td><td class='startkont uh'>Double</td></tr>
+<tr><td class='uh'>A</td><td>Forza Tournament</td><td class='startkont'>200.00</td><td class='startkont'>200.00</td></tr>
+<tr><td class='uh'>B</td><td>Forza Tournament</td><td class='startkont'>200.00</td><td class='startkont'>200.00</td></tr>
+<tr><td class='uh'>C</td><td>Forza Tournament</td><td class='startkont'>200.00</td><td class='startkont'>200.00</td></tr>
+<tr><td class='uh'>E</td><td>Forza Tournament</td><td class='startkont'>200.00</td><td class='startkont'>200.00</td></tr>
+<tr><td class='uh'>U13A</td><td>Forza Tournament</td><td class='startkont'>100.00</td><td class='startkont'>150.00</td></tr>
+<tr><td class='uh'>U15A</td><td>Forza Tournament</td><td class='startkont'>200.00</td><td class='startkont'>200.00</td></tr>
+<tr><td class='uh'>U17A</td><td>Forza Tournament</td><td class='startkont'>200.00</td><td class='startkont'>200.00</td></tr>
+<tr><td class='uh'>U19A</td><td>Forza Tournament</td><td class='startkont'>200.00</td><td class='startkont'>200.00</td></tr>
+<tr><td class='uh'>U11A</td><td>Forza Tournament</td><td class='startkont'>100.00</td><td class='startkont'>150.00</td></tr>
+</table>
+</td></tr>
+
+<tr><td class='uh'>Innbetalingsinfo</td><td>: Klubbene skal betale klubbvis senest samme dag som KM starter. Betaling kan skje ved forskuddsbetaling via bankkonto ( faktura tilsendes ) eller kontant i hallen. </td></tr>
+<tr><td class='uh'>Premieringsalternativ</td><td></td></tr>
+<tr><td class='uh'>PÃ¥meldingsfrist</td><td>21.01.2011</td></tr>
+<!--tr><td class='uh'>NettpÃ¥melding</td><td>km2011btv</td></tr -->
+
+<tr><td class='uh'>Kontaktinformasjon</td>
+<td>
+    <table> <tr><td></td><td class='uh'>Turneringsleder</td><td class='uh'>Oppmann</td></tr>
+            <tr><td class='uh'>Navn</td><td>Henning Skaug</td><td>Nils Petter Johansen</td></tr>
+            <tr><td class='uh'>Telefon</td><td>90552330</td><td>95209053</td></tr>
+            <tr><td class='uh'>Epost</td><td>mailto:Henning.Skaug@tess.no</td><td>npj@bssj.no</td></tr>
+    </table>
+</td>
+</tr>
+                                                                       
+<tr><td class='uh'>Annen info</td><td>KM-medaljer til de tre første forutsatt at alle medaljevinnere har spilt fullt ut og vunnet minst en kamp.<br>
+<br>
+Det tas forbehold om sammenslåing av klasser.<br>
+<br>
+En spiller kan kun delta i to kategorier.<br>
+<br>
+Det spilles på inntil 9 baner samtidig på parkettgulv.<br>
+Arrangøren forbeholder seg rett til å slå sammen klasser. <br>
+Under hele turneringen vil det være åpen kafeteria i Hårkollhallen.<br>
+<br>
+Senior B og C er ikke kretsmesterskap.</td></tr>
+    
+</table>
+
+</body>
+</html>

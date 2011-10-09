@@ -1,0 +1,13 @@
+{% extends "search_form.html" %}
+{% load custom_tags_and_filters %}
+
+{% block title %}Klubber{% endblock %}
+
+{% block results %}
+    <h2>Klubber</h2>
+    <ul>
+    {% for club in clubs %}
+        <li>{{ club.name|redirect:club.description|safe }}</li>
+    {% endfor %}
+    </ul>
+{% endblock %}

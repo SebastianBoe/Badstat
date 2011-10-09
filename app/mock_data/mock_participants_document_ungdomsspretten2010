@@ -1,0 +1,275 @@
+<html>
+<head>
+<style type="text/css">
+@import "ca_style.css";
+@import "ca_stylebtt.css";
+a
+{
+text-decoration: none; color: white
+}
+
+td
+{
+    padding-right: 20px;
+}
+#multipurpose
+{
+    position: absolute;
+    visibility: hidden;
+    background: #ffffff;
+    border:1px solid #000000;
+    padding-left: 10px;
+    padding-bottom: 10px;
+    padding-top: 5px;
+    padding-right: 30px;
+}
+.mp_close_btt
+{
+    position: absolute;
+    right: 3px;
+}
+</style>
+<script type="text/javascript" src='ajax.js'></script>
+<script type="text/javascript"><!--
+function setItalic(elem)
+{
+	x=document.getElementById(elem);
+	if (x != null)
+		x.style.fontStyle="italic";
+}
+function resetItalic(elem)
+{
+	x=document.getElementById(elem);
+	if (x != null)
+		x.style.fontStyle="";
+}
+function tilbake()
+{
+    document.location='reg_login_form.php';
+}
+function tilbake_forenklet_paamelding(nbr)
+{
+    if (nbr == 6)
+        document.location = 'reg_team_players.php';
+    else
+        document.location='reg_lag_onestep.php';
+}
+function setMousePos(ev)
+{
+   if(ev.pageX || ev.pageY)
+   {
+        x=ev.pageX;
+        y=ev.pageY;
+   }
+   else
+   {
+       x=ev.clientX + document.body.scrollLeft - document.body.clientLeft;
+       y=ev.clientY + document.body.scrollTop  - document.body.clientTop;
+   }
+   mTop = y;
+   mLeft = x;
+}
+
+function vis_spillerkontaktinfo(lag_id, ev)
+{
+    setMousePos(ev);
+    mp = document.getElementById('multipurpose');
+    mp.style.top = mTop - 10;
+    mp.style.left = mLeft + 20;
+    //mp.style.height = 100;
+    //mp.style.width = 250;
+
+    var params = new Array();
+    params['lag_id'] = lag_id
+    straight_url_eval_params('vis_paamelding_spillerkontaktinfo.php', params);
+}
+function skjul_multipurpose()
+{
+    mp = document.getElementById('multipurpose')
+    mp.innerHTML = '';
+    mp.style.visibility='hidden';
+}
+//-->
+</script>
+</head>
+<body>
+ <h2>Påmeldinger - Ungdomsspretten 2010</h2>
+    <table>
+    <tr>
+      <td><b><a href='vis_paamelding.php?order=spillere' target='_self'>Spillere</b></a></td>
+      <td><b><a href='vis_paamelding.php?order=klubber' target='_self'>Klubb</b></a></td>
+      <td><b><a href='vis_paamelding.php?order=klasse' target='_self'>Klasse</b></a></td> <td><b><a href='vis_paamelding.php?order=tidspunkt' target='_self'>Tid</b></a></td> </tr>
+
+<tr><td> Hansen, Didrik Nagell / Opsanger, Thomas </td><td>Stavanger</td><td>HDU17A</td>
+<td>2010-09-13 22:41:52</td>
+<td>&nbsp;</td></tr>
+
+<tr><td> Janvin, Andreas / Stenhaug, Andreas </td><td>Stavanger</td><td>HDU17A</td>
+<td>2010-09-13 22:42:17</td>
+<td>&nbsp;</td></tr>
+
+<tr><td> Hagen , Gjermund  </td><td>Stavanger</td><td>HSU15A</td>
+<td>2010-08-27 15:42:59</td>
+<td>&nbsp;</td></tr>
+
+<tr><td> Hansen, Didrik Nagell </td><td>Stavanger</td><td>HSU15A</td>
+<td>2010-08-27 15:43:00</td>
+<td>&nbsp;</td></tr>
+
+<tr><td> Opsanger, Thomas </td><td>Stavanger</td><td>HSU15A</td>
+<td>2010-08-27 15:43:02</td>
+<td>&nbsp;</td></tr>
+
+<tr><td> Janvin, Andreas </td><td>Stavanger</td><td>HSU15A</td>
+<td>2010-08-27 15:43:03</td>
+<td>&nbsp;</td></tr>
+
+<tr><td> Stenhaug, Andreas </td><td>Stavanger</td><td>HSU15A</td>
+<td>2010-08-27 15:43:06</td>
+<td>&nbsp;</td></tr>
+
+<tr><td> Wallem, Kristine </td><td>Stavanger</td><td>DSU17A</td>
+<td>2010-09-13 22:40:59</td>
+<td>&nbsp;</td></tr>
+
+<tr><td> Hagen, Iris </td><td>Stavanger</td><td>DSU13A</td>
+<td>2010-08-27 15:43:34</td>
+<td>&nbsp;</td></tr>
+
+<tr><td> Hansen, Rikke Nagell </td><td>Stavanger</td><td>DSU13A</td>
+<td>2010-08-27 15:43:34</td>
+<td>&nbsp;</td></tr>
+
+<tr><td> Hagen, Iris / Hansen, Rikke Nagell </td><td>Stavanger</td><td>HDU13B</td>
+<td>2010-09-13 22:39:50</td>
+<td>&nbsp;</td></tr>
+
+<tr><td> Larsen, Daniel Fedai </td><td>Stavanger</td><td>HSU17A</td>
+<td>2010-09-14 18:45:13</td>
+<td>&nbsp;</td></tr>
+
+<tr><td> Hagen , Gjermund  / Larsen, Daniel Fedai </td><td>Stavanger</td><td>HDU17A</td>
+<td>2010-08-27 15:45:46</td>
+<td>&nbsp;</td></tr>
+
+<tr><td> Hagen, Sondre </td><td>Stavanger</td><td>HSU13A</td>
+<td>2010-08-27 15:46:05</td>
+<td>&nbsp;</td></tr>
+
+<tr><td> Aven, Kristin / Wallem, Kristine </td><td>Stavanger</td><td>DDU17A</td>
+<td>2010-09-13 23:17:06</td>
+<td>&nbsp;</td></tr>
+
+<tr><td> Aven, Kristin </td><td>Stavanger</td><td>DSU17A</td>
+<td>2010-09-13 22:40:53</td>
+<td>&nbsp;</td></tr>
+
+<tr><td> Hustoft, Henrik </td><td>Stavanger</td><td>HSU13A</td>
+<td>2010-09-05 21:01:25</td>
+<td>&nbsp;</td></tr>
+
+<tr><td> Hustoft, Henrik / Yang, Owen </td><td>Stavanger</td><td>HDU13B</td>
+<td>2010-09-08 19:41:16</td>
+<td>&nbsp;</td></tr>
+
+<tr><td> Kvalsvik, Georg </td><td>Stavanger</td><td>HSU15A</td>
+<td>2010-09-13 22:45:58</td>
+<td>&nbsp;</td></tr>
+
+<tr><td> Hagen, Sondre / Kvalsvik, Georg </td><td>Stavanger</td><td>HDU17A</td>
+<td>2010-09-13 22:44:01</td>
+<td>&nbsp;</td></tr>
+
+<tr><td> Lie, Marianne  / Krogsæter, Ingeborg </td><td>Karmøy</td><td>HDU13B</td>
+<td>2010-09-13 22:14:48</td>
+<td>&nbsp;</td></tr>
+
+<tr><td> Bjerkås, Johan Sivert </td><td>Brodd</td><td>HSU15A</td>
+<td>2010-09-07 08:44:02</td>
+<td>&nbsp;</td></tr>
+
+<tr><td> Bjerkås, Ane Margrethe Brun </td><td>Brodd</td><td>DSU17A</td>
+<td>2010-09-07 08:45:31</td>
+<td>&nbsp;</td></tr>
+
+<tr><td> Bjerkås, Ane Margrethe Brun / Dongelmans, Imkje  </td><td>Brodd</td><td>DDU17A</td>
+<td>2010-09-07 08:46:09</td>
+<td>&nbsp;</td></tr>
+
+<tr><td> Krogsæter, Lovise / Lie, Rebekka </td><td>Karmøy</td><td>DDU17A</td>
+<td>2010-09-13 23:18:34</td>
+<td>&nbsp;</td></tr>
+
+<tr><td> Lie, Marianne  </td><td>Karmøy</td><td>DSU13A</td>
+<td>2010-09-13 22:12:29</td>
+<td>&nbsp;</td></tr>
+
+<tr><td> Krogsæter, Ingeborg </td><td>Karmøy</td><td>DSU13A</td>
+<td>2010-09-13 22:12:28</td>
+<td>&nbsp;</td></tr>
+
+<tr><td> Jørgensen, Solvår S Flåten </td><td>Karmøy</td><td>DSU17A</td>
+<td>2010-09-13 22:18:00</td>
+<td>&nbsp;</td></tr>
+
+<tr><td> Lie, Rebekka </td><td>Karmøy</td><td>DSU15B</td>
+<td>2010-09-07 23:30:23</td>
+<td>&nbsp;</td></tr>
+
+<tr><td> Krogsæter, Lovise </td><td>Karmøy</td><td>DSU17A</td>
+<td>2010-09-13 22:17:51</td>
+<td>&nbsp;</td></tr>
+
+<tr><td> Ytreland, Håkon Synnes  </td><td>Karmøy</td><td>HSU15A</td>
+<td>2010-09-07 23:31:04</td>
+<td>&nbsp;</td></tr>
+
+<tr><td> Jørgensen, Solvår S Flåten / Ytreland, Håkon Synnes  </td><td>Karmøy</td><td>HDU17A</td>
+<td>2010-09-13 22:21:44</td>
+<td>&nbsp;</td></tr>
+
+<tr><td> Asbjørnsen, Marie </td><td>Brodd</td><td>DSU15B</td>
+<td>2010-09-08 18:37:27</td>
+<td>&nbsp;</td></tr>
+
+<tr><td> Frantzen, Ingeborg Ramsfjell </td><td>Brodd</td><td>DSU15B</td>
+<td>2010-09-08 18:37:33</td>
+<td>&nbsp;</td></tr>
+
+<tr><td> Rørheim Langvik, Joakim </td><td>Brodd</td><td>HSU13A</td>
+<td>2010-09-13 22:30:10</td>
+<td>&nbsp;</td></tr>
+
+<tr><td> Verstad, Vegard Nitter </td><td>Brodd</td><td>HSU17A</td>
+<td>2010-09-14 18:44:29</td>
+<td>&nbsp;</td></tr>
+
+<tr><td> Isdal, Leik Bjelland </td><td>Brodd</td><td>HSU17A</td>
+<td>2010-09-14 18:44:23</td>
+<td>&nbsp;</td></tr>
+
+<tr><td> Halvorsen, Håkon </td><td>Brodd</td><td>HSU17A</td>
+<td>2010-09-14 18:44:17</td>
+<td>&nbsp;</td></tr>
+
+<tr><td> Cappelen, Casper </td><td>Brodd</td><td>HSU13A</td>
+<td>2010-09-13 22:30:54</td>
+<td>&nbsp;</td></tr>
+
+<tr><td> Yang, Owen </td><td>Stavanger</td><td>HSU13A</td>
+<td>2010-09-13 22:45:05</td>
+<td>&nbsp;</td></tr>
+
+</table>
+
+<div style="position:absolute;top:72px;left:15px">
+<table><tr><td><input class='btt' id='1' type='button' value='Tilbake' onClick='tilbake(); return false;' onMouseOver='setItalic(this.id)' onMouseOut='resetItalic(this.id)'></td></tr>
+</table>
+</div><h3>Totaloversikt</h3>
+<table><tr><td><b>Klubb</td><td><b>Antall</b></td></tr>
+<tr><td>Brodd IL Badminton</td><td style='text-align:right'>11</td></tr>
+<tr><td>Karmøy Badmintonklubb</td><td style='text-align:right'>9</td></tr>
+<tr><td>Stavanger Badmintonklubb</td><td style='text-align:right'>21</td></tr>
+<tr><td><b>Sum</td><td style='text-align:right;font-weight:bold;'>41</td></tr></table>
+<div id='multipurpose'></div></body>
+</html>

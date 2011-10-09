@@ -1,0 +1,328 @@
+	
+
+<!--
+select si.ib_organisasjon, ro.ro_land 
+from soknad_innbydelse si, ranking_organisasjon ro 
+where si.ib_id = 598
+and ro.ro_id = si.ib_organisasjon-->﻿<!--
+select *
+from soknad_innbydelse_klasser
+where sik_siid = '598'
+and sik_orgid = 'NBF.NO.BM'--><!--
+Array
+(
+    [MDV2] => MDV2
+    [HSV2] => HSV2
+    [HDV2] => HDV2
+    [DSV2] => DSV2
+    [DDV2] => DDV2
+    [MDU11A] => MDU11A
+    [HSU11A] => HSU11A
+    [HDU11A] => HDU11A
+    [DSU11A] => DSU11A
+    [DDU11A] => DDU11A
+    [MDU19A] => MDU19A
+    [HSU19A] => HSU19A
+    [HDU19A] => HDU19A
+    [DSU19A] => DSU19A
+    [DDU19A] => DDU19A
+    [MDU17A] => MDU17A
+    [HSU17A] => HSU17A
+    [HDU17A] => HDU17A
+    [DSU17A] => DSU17A
+    [DDU17A] => DDU17A
+    [MDU15A] => MDU15A
+    [HSU15A] => HSU15A
+    [HDU15A] => HDU15A
+    [DSU15A] => DSU15A
+    [DDU15A] => DDU15A
+    [MDU13A] => MDU13A
+    [HSU13A] => HSU13A
+    [HDU13A] => HDU13A
+    [DSU13A] => DSU13A
+    [DDU13A] => DDU13A
+    [MDE] => MDE
+    [HSE] => HSE
+    [HDE] => HDE
+    [DDE] => DDE
+    [DSE] => DSE
+    [MDC] => MDC
+    [HSC] => HSC
+    [HDC] => HDC
+    [DSC] => DSC
+    [DDC] => DDC
+    [MDA] => MDA
+    [HSA] => HSA
+    [HDA] => HDA
+    [DSA] => DSA
+    [DDA] => DDA
+)
+--><!--
+Array
+(
+    [Senior] => Array
+        (
+            [A] => Array
+                (
+                    [DD] => DDA
+                    [DS] => DSA
+                    [HD] => HDA
+                    [HS] => HSA
+                    [MD] => MDA
+                )
+
+            [C] => Array
+                (
+                    [DD] => DDC
+                    [DS] => DSC
+                    [HD] => HDC
+                    [HS] => HSC
+                    [MD] => MDC
+                )
+
+            [E] => Array
+                (
+                    [DD] => DDE
+                    [DS] => DSE
+                    [HD] => HDE
+                    [HS] => HSE
+                    [MD] => MDE
+                )
+
+        )
+
+    [Aldersbestemt] => Array
+        (
+            [U13A] => Array
+                (
+                    [DD] => DDU13A
+                    [DS] => DSU13A
+                    [HD] => HDU13A
+                    [HS] => HSU13A
+                    [MD] => MDU13A
+                )
+
+            [U15A] => Array
+                (
+                    [DD] => DDU15A
+                    [DS] => DSU15A
+                    [HD] => HDU15A
+                    [HS] => HSU15A
+                    [MD] => MDU15A
+                )
+
+            [U17A] => Array
+                (
+                    [DD] => DDU17A
+                    [DS] => DSU17A
+                    [HD] => HDU17A
+                    [MD] => MDU17A
+                    [HS] => HSU17A
+                )
+
+            [U19A] => Array
+                (
+                    [DD] => DDU19A
+                    [DS] => DSU19A
+                    [HD] => HDU19A
+                    [HS] => HSU19A
+                    [MD] => MDU19A
+                )
+
+            [U11A] => Array
+                (
+                    [DS] => DSU11A
+                    [HD] => HDU11A
+                    [MD] => MDU11A
+                    [HS] => HSU11A
+                    [DD] => DDU11A
+                )
+
+        )
+
+    [Veteran] => Array
+        (
+            [V2] => Array
+                (
+                    [DD] => DDV2
+                    [DS] => DSV2
+                    [HD] => HDV2
+                    [HS] => HSV2
+                    [MD] => MDV2
+                )
+
+        )
+
+)
+--><html>
+<head>
+<script src='ajax.js'></script> 
+<script type='text/javascript' src='calendar/dhtmlgoodies_calendar.js'></script>
+<script type='text/javascript' src='calendar/behaviour.js'></script>
+<script>
+action_assoc_arr = [];
+action_assoc_arr[100] = "terminliste.php";
+action_assoc_arr[101] = "../pamelding/redirect.php?tknavn=km2011sor";
+action_assoc_arr[102] = "../resultater/vis.php?turn=km2011sor";
+ 
+function do_act(abbr)
+{
+    act = action_assoc_arr[abbr] 
+    er_func = act.indexOf('(')
+    
+    if (er_func != -1)
+        eval(act);
+    else
+        document.location = act;
+    
+}
+
+var myrules = 
+{
+    '.menu' : function(element)
+    {
+        element.onclick = function()
+        {
+             do_act(this.id);
+        },
+        element.onmouseover = function()
+        {
+            this.style.color = '#ffff80';   
+        },
+        element.onmouseout = function()
+        {
+            this.style.color = '#ffffff';   
+        }
+    } 
+};
+
+Behaviour.register(myrules);
+
+action_assoc_arr[100] = 'terminliste.php';
+
+
+</script>
+
+<style type='text/css'>
+@import 'style/menu_style.css';
+@import 'sok_style.css';
+td
+{
+    padding-right: 15px;
+    vertical-align: top;
+}
+.startkont
+{
+    
+    text-align:right;
+}
+
+td.tdk
+{
+    padding-right: 0px;
+
+}
+#klasser_span
+{
+    display: inline;
+}
+
+.uh
+{
+    font-weight:bold;
+}
+
+</style>
+
+
+</head>
+<body>
+<div class='toparea'>
+<img src='logoer/NBF.NO.BM.png'>
+<table class='tmenu' cellspacing='0'>
+    <tr>
+        <td class='tdmenu'><span class='menu' id='100'>&nbsp;&nbsp;Terminliste</span>
+        <span class='menu' id='101'>&nbsp;&nbsp;Påmelding</span>
+        <span class='menu' id='102'>&nbsp;&nbsp;Oppsett og resultater</span>
+        </td>
+    </tr>
+    <tr>
+        <td class='sub'> &nbsp;</td>
+    </tr>
+    </table>
+</div>
+<p>
+<table>
+<form method='post' action='soknad_innbydelse_upd.php' name='skjema'>
+
+<tr><td class='uh'>Arrangement</td><td>KM 2011 S�r</td></tr>
+<tr><td class='uh'>Arrangør</td><td>Brodd Badmintonklubb</td></tr>
+<tr><td class='uh'>Spillested/hall</td><td>Storhaughallen - Stavanger</td></tr>
+<tr><td class='uh'>Dato</td>
+    <td>
+        <table><tr><td  class='uh'>Fra: </td><td>28.01.2011</td><td class='uh'>Til:</td><td>30.01.2011</td></tr>
+                <tr><td class='uh'>kl.: </td><td>17.00</td><td class='uh'>ca kl.:</td><td>18.00</td></tr>
+        </table>
+    </td>
+</tr> 
+<tr><td class='uh'>Nivå</td><td><table>
+<tr><td class='uh'>Veteran:</td><td>Vanlig turnering</td><tr>
+<tr><td class='uh'>Aldersbestemt:</td><td>Vanlig turnering</td><tr>
+<tr><td class='uh'>Senior:</td><td>A, B, C, D og E</td><tr>
+</table>
+</td></tr> 
+<tr><td class='uh'>Klasser og kategorier</td><td><table class='klasser'>
+<tr>
+<td>
+<table><tr><td class='tdk uh' colspan='6'>Senior</td></tr>
+<tr><td class='tdk uh'>A</td><td class='tdk'>DD</td><td class='tdk'>DS</td><td class='tdk'>HD</td><td class='tdk'>HS</td><td class='tdk'>MD</td></tr><tr><td class='tdk uh'>C</td><td class='tdk'>DD</td><td class='tdk'>DS</td><td class='tdk'>HD</td><td class='tdk'>HS</td><td class='tdk'>MD</td></tr><tr><td class='tdk uh'>E</td><td class='tdk'>DD</td><td class='tdk'>DS</td><td class='tdk'>HD</td><td class='tdk'>HS</td><td class='tdk'>MD</td></tr></table>
+</td>
+<td>
+<table><tr><td class='tdk uh' colspan='6'>Aldersbestemt</td></tr>
+<tr><td class='tdk uh'>U13A</td><td class='tdk'>DD</td><td class='tdk'>DS</td><td class='tdk'>HD</td><td class='tdk'>HS</td><td class='tdk'>MD</td></tr><tr><td class='tdk uh'>U15A</td><td class='tdk'>DD</td><td class='tdk'>DS</td><td class='tdk'>HD</td><td class='tdk'>HS</td><td class='tdk'>MD</td></tr><tr><td class='tdk uh'>U17A</td><td class='tdk'>DD</td><td class='tdk'>DS</td><td class='tdk'>HD</td><td class='tdk'>HS</td><td class='tdk'>MD</td></tr><tr><td class='tdk uh'>U19A</td><td class='tdk'>DD</td><td class='tdk'>DS</td><td class='tdk'>HD</td><td class='tdk'>HS</td><td class='tdk'>MD</td></tr><tr><td class='tdk uh'>U11A</td><td class='tdk'>DD</td><td class='tdk'>DS</td><td class='tdk'>HD</td><td class='tdk'>HS</td><td class='tdk'>MD</td></tr></table>
+</td>
+<td>
+<table><tr><td class='tdk uh' colspan='6'>Veteran</td></tr>
+<tr><td class='tdk uh'>V2</td><td class='tdk'>DD</td><td class='tdk'>DS</td><td class='tdk'>HD</td><td class='tdk'>HS</td><td class='tdk'>MD</td></tr></table>
+</td>
+</tr>
+</table></td></tr>
+          
+ 
+<tr><td class='uh'>Klassedetaljer</td><td><table><tr><td>&nbsp;</td><td class='startkont uh'>Ball</td><td class='startkont uh'>Startkont.&nbsp;Single</td><td class='startkont uh'>Double</td></tr>
+<tr><td class='uh'>A</td><td>Forza Tournament</td><td class='startkont'>150.00</td><td class='startkont'>150.00</td></tr>
+<tr><td class='uh'>C</td><td>Forza Tournament</td><td class='startkont'>120.00</td><td class='startkont'>120.00</td></tr>
+<tr><td class='uh'>E</td><td>Forza Tournament</td><td class='startkont'>150.00</td><td class='startkont'>150.00</td></tr>
+<tr><td class='uh'>U13A</td><td>Forza Tournament</td><td class='startkont'>120.00</td><td class='startkont'>120.00</td></tr>
+<tr><td class='uh'>U15A</td><td>Forza Tournament</td><td class='startkont'>120.00</td><td class='startkont'>120.00</td></tr>
+<tr><td class='uh'>U17A</td><td>Forza Tournament</td><td class='startkont'>120.00</td><td class='startkont'>120.00</td></tr>
+<tr><td class='uh'>U19A</td><td>Forza Tournament</td><td class='startkont'>120.00</td><td class='startkont'>120.00</td></tr>
+<tr><td class='uh'>V2</td><td>Forza Tournament</td><td class='startkont'>120.00</td><td class='startkont'>120.00</td></tr>
+<tr><td class='uh'>U11A</td><td>Yonex Mavis Plast</td><td class='startkont'>60.00</td><td class='startkont'>80.00</td></tr>
+</table>
+</td></tr>
+
+<tr><td class='uh'>Innbetalingsinfo</td><td>Regning sendes ut med trekning. Betalingsfrist 14 dager.</td></tr>
+<tr><td class='uh'>Premieringsalternativ</td><td>3a</td></tr>
+<tr><td class='uh'>Påmeldingsfrist</td><td>17.01.2011</td></tr>
+<!--tr><td class='uh'>Nettpåmelding</td><td>km2011sor</td></tr -->
+
+<tr><td class='uh'>Kontaktinformasjon</td>
+<td>
+    <table> <tr><td></td><td class='uh'>Turneringsleder</td><td class='uh'>Oppmann</td></tr>
+            <tr><td class='uh'>Navn</td><td>Bjarte Holmedal</td><td>J�rn Nielsen</td></tr>
+            <tr><td class='uh'>Telefon</td><td>91726613</td><td>48020686</td></tr>
+            <tr><td class='uh'>Epost</td><td>bjarte.holmedal@lyse.net</td><td>jorn.nielsen@sonans.no</td></tr>
+    </table>
+</td>
+</tr>
+                                                                       
+<tr><td class='uh'>Annen info</td><td>Maks 2 baller pr. kamp. Hele r�r kan kj�pes i hallen.<br>
+Sm� klasser sl�yfes/sl�es sammen.<br>
+Info om overnatting sendes ut i eget skriv.<br>
+NB! Turneringen kan starte om fredagen (ettermiddag)for enkelte klasser.</td></tr>
+    
+</table>
+
+</body>
+</html>

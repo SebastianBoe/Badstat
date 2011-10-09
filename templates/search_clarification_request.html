@@ -1,0 +1,12 @@
+{% extends "search_form.html" %}
+{% load custom_tags_and_filters %}
+
+{% block results %}
+    <p>Jeg beklager men søket ditt er tvetydig. Mente du en av disse tingene?</p>
+
+    <p>
+    {% for match_object in matches %}
+        {{ match_object.description|redirect:match_object.id|safe }}?<br>
+    {% endfor %}
+    </p>
+{% endblock %}

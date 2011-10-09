@@ -1,0 +1,10 @@
+{% extends "search_form.html" %}
+
+{% block results %}
+    <h2>{{ tournament.name }}</h2>
+    host: {{ tournament.host.name }}<br/>
+    from: {{ tournament.fromDate }}<br/>
+    to: {{ tournament.toDate }}<br/>
+
+    description: {{ tournament.description }}<br/>
+{% endblock %}

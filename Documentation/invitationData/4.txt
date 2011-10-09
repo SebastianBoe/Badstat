@@ -1,0 +1,275 @@
+	
+
+<!--
+select si.ib_organisasjon, ro.ro_land 
+from soknad_innbydelse si, ranking_organisasjon ro 
+where si.ib_id = 4
+and ro.ro_id = si.ib_organisasjon-->﻿<!--
+select *
+from soknad_innbydelse_klasser
+where sik_siid = '4'
+and sik_orgid = 'NBF.NO.BM'--><!--
+Array
+(
+    [DDA] => DDA
+    [DSA] => DSA
+    [HDA] => HDA
+    [HSA] => HSA
+    [MDA] => MDA
+    [DDB] => DDB
+    [DSB] => DSB
+    [HDB] => HDB
+    [HSB] => HSB
+    [MDB] => MDB
+    [DDC] => DDC
+    [DSC] => DSC
+    [HDC] => HDC
+    [HSC] => HSC
+    [MDC] => MDC
+    [DDD] => DDD
+    [DSD] => DSD
+    [HDD] => HDD
+    [HSD] => HSD
+    [MDD] => MDD
+    [DDU11N] => DDU11N
+    [DSU11N] => DSU11N
+    [HDU11N] => HDU11N
+    [HSU11N] => HSU11N
+    [MDU11N] => MDU11N
+    [DDU13] => DDU13
+    [DSU13] => DSU13
+    [HDU13] => HDU13
+    [HSU13] => HSU13
+    [MDU13] => MDU13
+    [DDU13N] => DDU13N
+    [DSU13N] => DSU13N
+    [HDU13N] => HDU13N
+    [HSU13N] => HSU13N
+    [MDU13N] => MDU13N
+    [DDU15] => DDU15
+    [DSU15] => DSU15
+    [HDU15] => HDU15
+    [HSU15] => HSU15
+    [MDU15] => MDU15
+    [DDU15N] => DDU15N
+    [DSU15N] => DSU15N
+    [HDU15N] => HDU15N
+    [HSU15N] => HSU15N
+    [MDU15N] => MDU15N
+    [DDU17] => DDU17
+    [DSU17] => DSU17
+    [HDU17] => HDU17
+    [HSU17] => HSU17
+    [MDU17] => MDU17
+    [DDU17N] => DDU17N
+    [DSU17N] => DSU17N
+    [HDU17N] => HDU17N
+    [HSU17N] => HSU17N
+    [MDU17N] => MDU17N
+    [DDU19] => DDU19
+    [DSU19] => DSU19
+    [HDU19] => HDU19
+    [HSU19] => HSU19
+    [MDU19] => MDU19
+    [DDU19N] => DDU19N
+    [DSU19N] => DSU19N
+    [HDU19N] => HDU19N
+    [HSU19N] => HSU19N
+    [MDU19N] => MDU19N
+)
+--><!--
+Array
+(
+    [Senior] => Array
+        (
+            [A] => Array
+                (
+                    [DD] => DDA
+                    [DS] => DSA
+                    [HD] => HDA
+                    [HS] => HSA
+                    [MD] => MDA
+                )
+
+            [B] => Array
+                (
+                    [DD] => DDB
+                    [DS] => DSB
+                    [HD] => HDB
+                    [HS] => HSB
+                    [MD] => MDB
+                )
+
+            [C] => Array
+                (
+                    [DD] => DDC
+                    [DS] => DSC
+                    [HD] => HDC
+                    [HS] => HSC
+                    [MD] => MDC
+                )
+
+            [D] => Array
+                (
+                    [DD] => DDD
+                    [DS] => DSD
+                    [HD] => HDD
+                    [HS] => HSD
+                    [MD] => MDD
+                )
+
+        )
+
+)
+--><html>
+<head>
+<script src='ajax.js'></script> 
+<script type='text/javascript' src='calendar/dhtmlgoodies_calendar.js'></script>
+<script type='text/javascript' src='calendar/behaviour.js'></script>
+<script>
+action_assoc_arr = [];
+action_assoc_arr[100] = "terminliste.php";
+action_assoc_arr[102] = "../resultater/vis.php?turn=";
+ 
+function do_act(abbr)
+{
+    act = action_assoc_arr[abbr] 
+    er_func = act.indexOf('(')
+    
+    if (er_func != -1)
+        eval(act);
+    else
+        document.location = act;
+    
+}
+
+var myrules = 
+{
+    '.menu' : function(element)
+    {
+        element.onclick = function()
+        {
+             do_act(this.id);
+        },
+        element.onmouseover = function()
+        {
+            this.style.color = '#ffff80';   
+        },
+        element.onmouseout = function()
+        {
+            this.style.color = '#ffffff';   
+        }
+    } 
+};
+
+Behaviour.register(myrules);
+
+action_assoc_arr[100] = 'terminliste.php';
+
+
+</script>
+
+<style type='text/css'>
+@import 'style/menu_style.css';
+@import 'sok_style.css';
+td
+{
+    padding-right: 15px;
+    vertical-align: top;
+}
+.startkont
+{
+    
+    text-align:right;
+}
+
+td.tdk
+{
+    padding-right: 0px;
+
+}
+#klasser_span
+{
+    display: inline;
+}
+
+.uh
+{
+    font-weight:bold;
+}
+
+</style>
+
+
+</head>
+<body>
+<div class='toparea'>
+<img src='logoer/NBF.NO.BM.png'>
+<table class='tmenu' cellspacing='0'>
+    <tr>
+        <td class='tdmenu'><span class='menu' id='100'>&nbsp;&nbsp;Terminliste</span>
+        
+        <span class='menu' id='102'>&nbsp;&nbsp;Oppsett og resultater</span>
+        </td>
+    </tr>
+    <tr>
+        <td class='sub'> &nbsp;</td>
+    </tr>
+    </table>
+</div>
+<p>
+<table>
+<form method='post' action='soknad_innbydelse_upd.php' name='skjema'>
+
+<tr><td class='uh'>Arrangement</td><td>Arctic Open</td></tr>
+<tr><td class='uh'>Arrangør</td><td>Troms� Badmintonklubb</td></tr>
+<tr><td class='uh'>Spillested/hall</td><td></td></tr>
+<tr><td class='uh'>Dato</td>
+    <td>
+        <table><tr><td  class='uh'>Fra: </td><td>07.02.2009</td><td class='uh'>Til:</td><td>08.02.2009</td></tr>
+                <tr><td class='uh'>kl.: </td><td>0900</td><td class='uh'>ca kl.:</td><td>1800</td></tr>
+        </table>
+    </td>
+</tr> 
+<tr><td class='uh'>Nivå</td><td><table>
+</table>
+</td></tr> 
+<tr><td class='uh'>Klasser og kategorier</td><td><table class='klasser'>
+<tr>
+<td>
+<table><tr><td class='tdk uh' colspan='6'>Senior</td></tr>
+<tr><td class='tdk uh'>A</td><td class='tdk'>DD</td><td class='tdk'>DS</td><td class='tdk'>HD</td><td class='tdk'>HS</td><td class='tdk'>MD</td></tr><tr><td class='tdk uh'>B</td><td class='tdk'>DD</td><td class='tdk'>DS</td><td class='tdk'>HD</td><td class='tdk'>HS</td><td class='tdk'>MD</td></tr><tr><td class='tdk uh'>C</td><td class='tdk'>DD</td><td class='tdk'>DS</td><td class='tdk'>HD</td><td class='tdk'>HS</td><td class='tdk'>MD</td></tr><tr><td class='tdk uh'>D</td><td class='tdk'>DD</td><td class='tdk'>DS</td><td class='tdk'>HD</td><td class='tdk'>HS</td><td class='tdk'>MD</td></tr></table>
+</td>
+</tr>
+</table></td></tr>
+          
+ 
+<tr><td class='uh'>Klassedetaljer</td><td><table><tr><td>&nbsp;</td><td class='startkont uh'>Ball</td><td class='startkont uh'>Startkont.&nbsp;Single</td><td class='startkont uh'>Double</td></tr>
+<tr><td class='uh'>A</td><td>Forza Tournament</td><td class='startkont'>150.00</td><td class='startkont'>150.00</td></tr>
+<tr><td class='uh'>B</td><td>Forza Tournament</td><td class='startkont'>150.00</td><td class='startkont'>150.00</td></tr>
+<tr><td class='uh'>C</td><td>Forza Tournament</td><td class='startkont'>150.00</td><td class='startkont'>150.00</td></tr>
+<tr><td class='uh'>D</td><td>Forza Tournament</td><td class='startkont'>150.00</td><td class='startkont'>150.00</td></tr>
+</table>
+</td></tr>
+
+<tr><td class='uh'>Innbetalingsinfo</td><td>Innbetaling til TBK kontonr:05300488643</td></tr>
+<tr><td class='uh'>Premieringsalternativ</td><td></td></tr>
+<tr><td class='uh'>Påmeldingsfrist</td><td>28.01.2009</td></tr>
+<!--tr><td class='uh'>Nettpåmelding</td><td></td></tr -->
+
+<tr><td class='uh'>Kontaktinformasjon</td>
+<td>
+    <table> <tr><td></td><td class='uh'>Turneringsleder</td><td class='uh'>Oppmann</td></tr>
+            <tr><td class='uh'>Navn</td><td>Irving Jenssen</td><td></td></tr>
+            <tr><td class='uh'>Telefon</td><td>98249520</td><td></td></tr>
+            <tr><td class='uh'>Epost</td><td>irving@online.no</td><td></td></tr>
+    </table>
+</td>
+</tr>
+                                                                       
+<tr><td class='uh'>Annen info</td><td></td></tr>
+    
+</table>
+
+</body>
+</html>

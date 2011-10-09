@@ -1,0 +1,202 @@
+	
+
+<!--
+select si.ib_organisasjon, ro.ro_land 
+from soknad_innbydelse si, ranking_organisasjon ro 
+where si.ib_id = 448
+and ro.ro_id = si.ib_organisasjon-->﻿<!--
+select *
+from soknad_innbydelse_klasser
+where sik_siid = '448'
+and sik_orgid = 'NBF.NO.BM'--><!--
+Array
+(
+    [DDU15A] => DDU15A
+    [DSU15A] => DSU15A
+    [HDU15A] => HDU15A
+    [HSU15A] => HSU15A
+    [MDU15A] => MDU15A
+    [DDU19A] => DDU19A
+    [DSU19A] => DSU19A
+    [HDU19A] => HDU19A
+    [HSU19A] => HSU19A
+    [MDU19A] => MDU19A
+)
+--><!--
+Array
+(
+    [Aldersbestemt] => Array
+        (
+            [U15A] => Array
+                (
+                    [DD] => DDU15A
+                    [DS] => DSU15A
+                    [HD] => HDU15A
+                    [HS] => HSU15A
+                    [MD] => MDU15A
+                )
+
+            [U19A] => Array
+                (
+                    [DD] => DDU19A
+                    [DS] => DSU19A
+                    [HD] => HDU19A
+                    [HS] => HSU19A
+                    [MD] => MDU19A
+                )
+
+        )
+
+)
+--><html>
+<head>
+<script src='ajax.js'></script> 
+<script type='text/javascript' src='calendar/dhtmlgoodies_calendar.js'></script>
+<script type='text/javascript' src='calendar/behaviour.js'></script>
+<script>
+action_assoc_arr = [];
+action_assoc_arr[100] = "terminliste.php";
+action_assoc_arr[101] = "../pamelding/redirect.php?tknavn=bergenranking2010";
+action_assoc_arr[102] = "../resultater/vis.php?turn=bergenranking2010";
+ 
+function do_act(abbr)
+{
+    act = action_assoc_arr[abbr] 
+    er_func = act.indexOf('(')
+    
+    if (er_func != -1)
+        eval(act);
+    else
+        document.location = act;
+    
+}
+
+var myrules = 
+{
+    '.menu' : function(element)
+    {
+        element.onclick = function()
+        {
+             do_act(this.id);
+        },
+        element.onmouseover = function()
+        {
+            this.style.color = '#ffff80';   
+        },
+        element.onmouseout = function()
+        {
+            this.style.color = '#ffffff';   
+        }
+    } 
+};
+
+Behaviour.register(myrules);
+
+action_assoc_arr[100] = 'terminliste.php';
+
+
+</script>
+
+<style type='text/css'>
+@import 'style/menu_style.css';
+@import 'sok_style.css';
+td
+{
+    padding-right: 15px;
+    vertical-align: top;
+}
+.startkont
+{
+    
+    text-align:right;
+}
+
+td.tdk
+{
+    padding-right: 0px;
+
+}
+#klasser_span
+{
+    display: inline;
+}
+
+.uh
+{
+    font-weight:bold;
+}
+
+</style>
+
+
+</head>
+<body>
+<div class='toparea'>
+<img src='logoer/NBF.NO.BM.png'>
+<table class='tmenu' cellspacing='0'>
+    <tr>
+        <td class='tdmenu'><span class='menu' id='100'>&nbsp;&nbsp;Terminliste</span>
+        <span class='menu' id='101'>&nbsp;&nbsp;Påmelding</span>
+        <span class='menu' id='102'>&nbsp;&nbsp;Oppsett og resultater</span>
+        </td>
+    </tr>
+    <tr>
+        <td class='sub'> &nbsp;</td>
+    </tr>
+    </table>
+</div>
+<p>
+<table>
+<form method='post' action='soknad_innbydelse_upd.php' name='skjema'>
+
+<tr><td class='uh'>Arrangement</td><td>Bergen Ranking 2010</td></tr>
+<tr><td class='uh'>Arrangør</td><td>Bergen Badmintonklubb</td></tr>
+<tr><td class='uh'>Spillested/hall</td><td>Tertnes Badmintonhall/�stveithallen</td></tr>
+<tr><td class='uh'>Dato</td>
+    <td>
+        <table><tr><td  class='uh'>Fra: </td><td>03.09.2010</td><td class='uh'>Til:</td><td>05.09.2010</td></tr>
+                <tr><td class='uh'>kl.: </td><td>1700</td><td class='uh'>ca kl.:</td><td>1500</td></tr>
+        </table>
+    </td>
+</tr> 
+<tr><td class='uh'>Nivå</td><td><table>
+<tr><td class='uh'>Aldersbestemt:</td><td>Ranking U13-19, Svenske</td><tr>
+</table>
+</td></tr> 
+<tr><td class='uh'>Klasser og kategorier</td><td><table class='klasser'>
+<tr>
+<td>
+<table><tr><td class='tdk uh' colspan='6'>Aldersbestemt</td></tr>
+<tr><td class='tdk uh'>U15A</td><td class='tdk'>DD</td><td class='tdk'>DS</td><td class='tdk'>HD</td><td class='tdk'>HS</td><td class='tdk'>MD</td></tr><tr><td class='tdk uh'>U19A</td><td class='tdk'>DD</td><td class='tdk'>DS</td><td class='tdk'>HD</td><td class='tdk'>HS</td><td class='tdk'>MD</td></tr></table>
+</td>
+</tr>
+</table></td></tr>
+          
+ 
+<tr><td class='uh'>Klassedetaljer</td><td><table><tr><td>&nbsp;</td><td class='startkont uh'>Ball</td><td class='startkont uh'>Startkont.&nbsp;Single</td><td class='startkont uh'>Double</td></tr>
+<tr><td class='uh'>U15A</td><td></td><td class='startkont'></td><td class='startkont'></td></tr>
+<tr><td class='uh'>U19A</td><td></td><td class='startkont'></td><td class='startkont'></td></tr>
+</table>
+</td></tr>
+
+<tr><td class='uh'>Innbetalingsinfo</td><td>Faktura sendes klubbene per e-post, 20 dagers betalingsfrist.</td></tr>
+<tr><td class='uh'>Premieringsalternativ</td><td>3a</td></tr>
+<tr><td class='uh'>Påmeldingsfrist</td><td>20.08.2010</td></tr>
+<!--tr><td class='uh'>Nettpåmelding</td><td>bergenranking2010</td></tr -->
+
+<tr><td class='uh'>Kontaktinformasjon</td>
+<td>
+    <table> <tr><td></td><td class='uh'>Turneringsleder</td><td class='uh'>Oppmann</td></tr>
+            <tr><td class='uh'>Navn</td><td>Ivan Christensen</td><td>Jarle Krokeide</td></tr>
+            <tr><td class='uh'>Telefon</td><td>98250616</td><td>91850436</td></tr>
+            <tr><td class='uh'>Epost</td><td>ivan_c@bergenbk.no</td><td>jarle.krokeide@tonsberg.kommune.no</td></tr>
+    </table>
+</td>
+</tr>
+                                                                       
+<tr><td class='uh'>Annen info</td><td>Inntil to baller per kamp, frie baller i finalene. Det blir salg av mat og drikke i Tertnes Badmintonhall.</td></tr>
+    
+</table>
+
+</body>
+</html>

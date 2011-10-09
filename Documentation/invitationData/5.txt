@@ -1,0 +1,275 @@
+	
+
+<!--
+select si.ib_organisasjon, ro.ro_land 
+from soknad_innbydelse si, ranking_organisasjon ro 
+where si.ib_id = 5
+and ro.ro_id = si.ib_organisasjon-->ï»¿<!--
+select *
+from soknad_innbydelse_klasser
+where sik_siid = '5'
+and sik_orgid = 'NBF.NO.BM'--><!--
+Array
+(
+    [MDV7] => MDV7
+    [HSV7] => HSV7
+    [HDV7] => HDV7
+    [DSV7] => DSV7
+    [DDV7] => DDV7
+    [MDV6] => MDV6
+    [HSV6] => HSV6
+    [HDV6] => HDV6
+    [DSV6] => DSV6
+    [DDV6] => DDV6
+    [MDV5] => MDV5
+    [HSV5] => HSV5
+    [HDV5] => HDV5
+    [DSV5] => DSV5
+    [DDV5] => DDV5
+    [MDV4] => MDV4
+    [HSV4] => HSV4
+    [HDV4] => HDV4
+    [DSV4] => DSV4
+    [DDV4] => DDV4
+    [MDV3] => MDV3
+    [HSV3] => HSV3
+    [HDV3] => HDV3
+    [DSV3] => DSV3
+    [DDV3] => DDV3
+    [MDV2] => MDV2
+    [HSV2] => HSV2
+    [HDV2] => HDV2
+    [DSV2] => DSV2
+    [DDV2] => DDV2
+    [MDV1] => MDV1
+    [HSV1] => HSV1
+    [HDV1] => HDV1
+    [DSV1] => DSV1
+    [DDV1] => DDV1
+)
+--><!--
+Array
+(
+    [Veteran] => Array
+        (
+            [V1] => Array
+                (
+                    [DD] => DDV1
+                    [DS] => DSV1
+                    [HD] => HDV1
+                    [HS] => HSV1
+                    [MD] => MDV1
+                )
+
+            [V2] => Array
+                (
+                    [DD] => DDV2
+                    [DS] => DSV2
+                    [HD] => HDV2
+                    [HS] => HSV2
+                    [MD] => MDV2
+                )
+
+            [V3] => Array
+                (
+                    [DD] => DDV3
+                    [DS] => DSV3
+                    [HD] => HDV3
+                    [HS] => HSV3
+                    [MD] => MDV3
+                )
+
+            [V4] => Array
+                (
+                    [DD] => DDV4
+                    [DS] => DSV4
+                    [HD] => HDV4
+                    [HS] => HSV4
+                    [MD] => MDV4
+                )
+
+            [V5] => Array
+                (
+                    [DD] => DDV5
+                    [DS] => DSV5
+                    [HD] => HDV5
+                    [HS] => HSV5
+                    [MD] => MDV5
+                )
+
+            [V6] => Array
+                (
+                    [DD] => DDV6
+                    [DS] => DSV6
+                    [HD] => HDV6
+                    [HS] => HSV6
+                    [MD] => MDV6
+                )
+
+            [V7] => Array
+                (
+                    [DD] => DDV7
+                    [DS] => DSV7
+                    [HD] => HDV7
+                    [HS] => HSV7
+                    [MD] => MDV7
+                )
+
+        )
+
+)
+--><html>
+<head>
+<script src='ajax.js'></script> 
+<script type='text/javascript' src='calendar/dhtmlgoodies_calendar.js'></script>
+<script type='text/javascript' src='calendar/behaviour.js'></script>
+<script>
+action_assoc_arr = [];
+action_assoc_arr[100] = "terminliste.php";
+action_assoc_arr[102] = "../resultater/vis.php?turn=http://www.cupassist.com/pamelding/redirect.php?tknavn=aot09";
+ 
+function do_act(abbr)
+{
+    act = action_assoc_arr[abbr] 
+    er_func = act.indexOf('(')
+    
+    if (er_func != -1)
+        eval(act);
+    else
+        document.location = act;
+    
+}
+
+var myrules = 
+{
+    '.menu' : function(element)
+    {
+        element.onclick = function()
+        {
+             do_act(this.id);
+        },
+        element.onmouseover = function()
+        {
+            this.style.color = '#ffff80';   
+        },
+        element.onmouseout = function()
+        {
+            this.style.color = '#ffffff';   
+        }
+    } 
+};
+
+Behaviour.register(myrules);
+
+action_assoc_arr[100] = 'terminliste.php';
+
+
+</script>
+
+<style type='text/css'>
+@import 'style/menu_style.css';
+@import 'sok_style.css';
+td
+{
+    padding-right: 15px;
+    vertical-align: top;
+}
+.startkont
+{
+    
+    text-align:right;
+}
+
+td.tdk
+{
+    padding-right: 0px;
+
+}
+#klasser_span
+{
+    display: inline;
+}
+
+.uh
+{
+    font-weight:bold;
+}
+
+</style>
+
+
+</head>
+<body>
+<div class='toparea'>
+<img src='logoer/NBF.NO.BM.png'>
+<table class='tmenu' cellspacing='0'>
+    <tr>
+        <td class='tdmenu'><span class='menu' id='100'>&nbsp;&nbsp;Terminliste</span>
+        
+        <span class='menu' id='102'>&nbsp;&nbsp;Oppsett og resultater</span>
+        </td>
+    </tr>
+    <tr>
+        <td class='sub'> &nbsp;</td>
+    </tr>
+    </table>
+</div>
+<p>
+<table>
+<form method='post' action='soknad_innbydelse_upd.php' name='skjema'>
+
+<tr><td class='uh'>Arrangement</td><td>Atlantic Ocean Tournament for veterans</td></tr>
+<tr><td class='uh'>ArrangÃ¸r</td><td>Kolvereid I.L. -Badminton</td></tr>
+<tr><td class='uh'>Spillested/hall</td><td>Nærøyhallen</td></tr>
+<tr><td class='uh'>Dato</td>
+    <td>
+        <table><tr><td  class='uh'>Fra: </td><td>28.05.2009</td><td class='uh'>Til:</td><td>30.05.2009</td></tr>
+                <tr><td class='uh'>kl.: </td><td>09.00</td><td class='uh'>ca kl.:</td><td>18.00</td></tr>
+        </table>
+    </td>
+</tr> 
+<tr><td class='uh'>NivÃ¥</td><td><table>
+</table>
+</td></tr> 
+<tr><td class='uh'>Klasser og kategorier</td><td><table class='klasser'>
+<tr>
+<td>
+<table><tr><td class='tdk uh' colspan='6'>Veteran</td></tr>
+<tr><td class='tdk uh'>V1</td><td class='tdk'>DD</td><td class='tdk'>DS</td><td class='tdk'>HD</td><td class='tdk'>HS</td><td class='tdk'>MD</td></tr><tr><td class='tdk uh'>V2</td><td class='tdk'>DD</td><td class='tdk'>DS</td><td class='tdk'>HD</td><td class='tdk'>HS</td><td class='tdk'>MD</td></tr><tr><td class='tdk uh'>V3</td><td class='tdk'>DD</td><td class='tdk'>DS</td><td class='tdk'>HD</td><td class='tdk'>HS</td><td class='tdk'>MD</td></tr><tr><td class='tdk uh'>V4</td><td class='tdk'>DD</td><td class='tdk'>DS</td><td class='tdk'>HD</td><td class='tdk'>HS</td><td class='tdk'>MD</td></tr><tr><td class='tdk uh'>V5</td><td class='tdk'>DD</td><td class='tdk'>DS</td><td class='tdk'>HD</td><td class='tdk'>HS</td><td class='tdk'>MD</td></tr><tr><td class='tdk uh'>V6</td><td class='tdk'>DD</td><td class='tdk'>DS</td><td class='tdk'>HD</td><td class='tdk'>HS</td><td class='tdk'>MD</td></tr><tr><td class='tdk uh'>V7</td><td class='tdk'>DD</td><td class='tdk'>DS</td><td class='tdk'>HD</td><td class='tdk'>HS</td><td class='tdk'>MD</td></tr></table>
+</td>
+</tr>
+</table></td></tr>
+          
+ 
+<tr><td class='uh'>Klassedetaljer</td><td><table><tr><td>&nbsp;</td><td class='startkont uh'>Ball</td><td class='startkont uh'>Startkont.&nbsp;Single</td><td class='startkont uh'>Double</td></tr>
+<tr><td class='uh'>V1</td><td>Yehlex Tournament</td><td class='startkont'>0.00</td><td class='startkont'>0.00</td></tr>
+<tr><td class='uh'>V2</td><td>Yehlex Tournament</td><td class='startkont'>0.00</td><td class='startkont'>0.00</td></tr>
+<tr><td class='uh'>V3</td><td>Yehlex Tournament</td><td class='startkont'>0.00</td><td class='startkont'>0.00</td></tr>
+<tr><td class='uh'>V4</td><td>Yehlex Tournament</td><td class='startkont'>0.00</td><td class='startkont'>0.00</td></tr>
+<tr><td class='uh'>V5</td><td>Yehlex Tournament</td><td class='startkont'>0.00</td><td class='startkont'>0.00</td></tr>
+<tr><td class='uh'>V6</td><td>Yehlex Tournament</td><td class='startkont'>0.00</td><td class='startkont'>0.00</td></tr>
+<tr><td class='uh'>V7</td><td></td><td class='startkont'>0.00</td><td class='startkont'>0.00</td></tr>
+</table>
+</td></tr>
+
+<tr><td class='uh'>Innbetalingsinfo</td><td>Fees to be paid upon arrival Kolvereid.</td></tr>
+<tr><td class='uh'>Premieringsalternativ</td><td>1.2. og 3.premier</td></tr>
+<tr><td class='uh'>PÃ¥meldingsfrist</td><td>15.04.2009</td></tr>
+<!--tr><td class='uh'>NettpÃ¥melding</td><td>http://www.cupassist.com/pamelding/redirect.php?tknavn=aot09</td></tr -->
+
+<tr><td class='uh'>Kontaktinformasjon</td>
+<td>
+    <table> <tr><td></td><td class='uh'>Turneringsleder</td><td class='uh'>Oppmann</td></tr>
+            <tr><td class='uh'>Navn</td><td>Helge Hansen</td><td>Tore Michalsen</td></tr>
+            <tr><td class='uh'>Telefon</td><td>91382530</td><td>91630586</td></tr>
+            <tr><td class='uh'>Epost</td><td>helgenha@online.no</td><td>tore.michaelsen@stud.hihm.no</td></tr>
+    </table>
+</td>
+</tr>
+                                                                       
+<tr><td class='uh'>Annen info</td><td>KOLVEREID BADMINTON CLUB, NorwayINVITESVeteran (senior) players to the 2nd ATLANTIC OCEAN TOURNAMENT Dates	May 28th – May 30th 2009 (Arrival in Trondheim the 27th, Departure from Kolvereid the 31st in the morning)Venue	Nærøyhallen, Kolvereid, NorwayAge Groups	35+, 40+, 45+, 50+, 55+, 60+, 65+, 70+. We consider having two strength classes in the age groups, depending on the size and the classifications of the entries. Further information will be given.Individuals being eligible if 35, 40, 45 etc years of age throughout 2008.Note: if there are less than four entries in a given age group, the right is reserved to cancel that age group.  If this happens, the players that have entered the cancelled age group will be eligible to enter a lower age group, provided that there are entry spaces available. Tournament system	We will try to allow the players to have at least two matches in each event. The classes will be played in round robin / pool play. If the number of entries is very high, cup system will be considered in the largest classes.Entries	Each club must send their entries by email to: helgenha@online.no by April 15th 2009. Please send information about each player’s date of birth. The players must be filled in ranking order from each country. Each country should appoint one or two team leaders.Entry fee:	€ 25 per player in single plays (to be paid upon arrival.)€ 12.50 per player in doubles and mixed doubles.Hotel 	Kolvereid Fjordhotel, near the venue.Sea voyage	Sea voyage from Trondheim to Rørvik Thursday 28th from 12.00 to 20.30. The cost will be € 200, including lunch, and dinner at the ship. For those who do not want the sea voyage, we offer bus transport from Trondheim to Kolvereid. Prices are not fixed yet.Barbecue party	Friday evening there will be a barbecue party:  € 30Farewell party	A farewell party with some entertainment Saturday evening: € 30Key dates	April 15th 2009	Atlantic Ocean Tournament entries close	April 15th 2009	Hotel booking deadline	May 29th 2009	Competition starts at 9.00	May 30th 2009	Semi-Finals and FinalsFarewell party Medals		Winners	Gold	Runners-up	Silver	Third place	BronzeReferee:	Tore Michaelsen, Norwegian Badminton Association	Look for updated information on www.atlantic-ocean.no and www.badminton.no/veteraner Program:Wednesday, May 27thArrival at Trondheim airport. Transport to Gildevangen Thon Hotel in Trondheim, situated near the railway station, and in walking distance to the pier.Thursday, May 28th  8.30: Sightseeing in Trondheim: The Nidaros Cathedral10.30: Leaving the hotel and heading for the ship. (by walk or taxi)10.00: For those who do not want the sea voyage, we offer bus transport from Trondheim to Kolvereid. Alternatively you can take airplane to Rørvik, only 29 km from Kolvrereid.12.00: The coastal express, ”MV Nordkapp” is leaving Trondheim bound for Rørvik.12.00 Lunch 15.00 Team managers’ meeting and welcome meeting on board the ship.18.00 Dinner20.30 The ship arrives at Rørvik, and the players and their escorts are transported to the hotels.Friday, May 29th   9.00 Assembling at the venue, Nærøyhallen at Kolvereid.    9.30 Start of the tournament.14.00 Siesta16.00 Tournament continues.19.00 End of first day’s competition.20.00 Barbecue partySaturday, May 30th   9.00 Start of the tournament.14.00 Siesta16.00 Tournament continues.19.00 End of second day’s competition20.30 Farewell party, prizes, entertainment, dance. Norwegian dishes, all rights.Sunday, May 31st9.00 Bus transport from Kolvereid to Trondheim Airport</td></tr>
+    
+</table>
+
+</body>
+</html>

@@ -1,0 +1,250 @@
+	
+
+<!--
+select si.ib_organisasjon, ro.ro_land 
+from soknad_innbydelse si, ranking_organisasjon ro 
+where si.ib_id = 707
+and ro.ro_id = si.ib_organisasjon-->ï»¿<!--
+select *
+from soknad_innbydelse_klasser
+where sik_siid = '707'
+and sik_orgid = 'NBF.NO.BM'--><!--
+Array
+(
+    [DSU11A] => DSU11A
+    [HSU19A] => HSU19A
+    [DSU19A] => DSU19A
+    [HSU15A] => HSU15A
+    [DSU15A] => DSU15A
+    [HSU15B] => HSU15B
+    [DSU15B] => DSU15B
+    [HSU13B] => HSU13B
+    [DSU13B] => DSU13B
+    [HSU13A] => HSU13A
+    [DSU13A] => DSU13A
+    [DSU11B] => DSU11B
+    [HSU11B] => HSU11B
+    [HSU11A] => HSU11A
+    [DSU9A] => DSU9A
+    [HSU9A] => HSU9A
+)
+--><!--
+Array
+(
+    [Aldersbestemt] => Array
+        (
+            [U11A] => Array
+                (
+                    [DS] => DSU11A
+                    [HS] => HSU11A
+                )
+
+            [U11B] => Array
+                (
+                    [DS] => DSU11B
+                    [HS] => HSU11B
+                )
+
+            [U13A] => Array
+                (
+                    [DS] => DSU13A
+                    [HS] => HSU13A
+                )
+
+            [U13B] => Array
+                (
+                    [DS] => DSU13B
+                    [HS] => HSU13B
+                )
+
+            [U15A] => Array
+                (
+                    [DS] => DSU15A
+                    [HS] => HSU15A
+                )
+
+            [U15B] => Array
+                (
+                    [DS] => DSU15B
+                    [HS] => HSU15B
+                )
+
+            [U19A] => Array
+                (
+                    [DS] => DSU19A
+                    [HS] => HSU19A
+                )
+
+            [U9A] => Array
+                (
+                    [DS] => DSU9A
+                    [HS] => HSU9A
+                )
+
+        )
+
+)
+--><html>
+<head>
+<script src='ajax.js'></script> 
+<script type='text/javascript' src='calendar/dhtmlgoodies_calendar.js'></script>
+<script type='text/javascript' src='calendar/behaviour.js'></script>
+<script>
+action_assoc_arr = [];
+action_assoc_arr[100] = "terminliste.php";
+action_assoc_arr[101] = "../pamelding/redirect.php?tknavn=ferskefjes11Sandefjordfebruar";
+action_assoc_arr[102] = "../resultater/vis.php?turn=ferskefjes11Sandefjordfebruar";
+ 
+function do_act(abbr)
+{
+    act = action_assoc_arr[abbr] 
+    er_func = act.indexOf('(')
+    
+    if (er_func != -1)
+        eval(act);
+    else
+        document.location = act;
+    
+}
+
+var myrules = 
+{
+    '.menu' : function(element)
+    {
+        element.onclick = function()
+        {
+             do_act(this.id);
+        },
+        element.onmouseover = function()
+        {
+            this.style.color = '#ffff80';   
+        },
+        element.onmouseout = function()
+        {
+            this.style.color = '#ffffff';   
+        }
+    } 
+};
+
+Behaviour.register(myrules);
+
+action_assoc_arr[100] = 'terminliste.php';
+
+
+</script>
+
+<style type='text/css'>
+@import 'style/menu_style.css';
+@import 'sok_style.css';
+td
+{
+    padding-right: 15px;
+    vertical-align: top;
+}
+.startkont
+{
+    
+    text-align:right;
+}
+
+td.tdk
+{
+    padding-right: 0px;
+
+}
+#klasser_span
+{
+    display: inline;
+}
+
+.uh
+{
+    font-weight:bold;
+}
+
+</style>
+
+
+</head>
+<body>
+<div class='toparea'>
+<img src='logoer/NBF.NO.BM.png'>
+<table class='tmenu' cellspacing='0'>
+    <tr>
+        <td class='tdmenu'><span class='menu' id='100'>&nbsp;&nbsp;Terminliste</span>
+        <span class='menu' id='101'>&nbsp;&nbsp;PÃ¥melding</span>
+        <span class='menu' id='102'>&nbsp;&nbsp;Oppsett og resultater</span>
+        </td>
+    </tr>
+    <tr>
+        <td class='sub'> &nbsp;</td>
+    </tr>
+    </table>
+</div>
+<p>
+<table>
+<form method='post' action='soknad_innbydelse_upd.php' name='skjema'>
+
+<tr><td class='uh'>Arrangement</td><td>Ferske fjes</td></tr>
+<tr><td class='uh'>ArrangÃ¸r</td><td>Sandefjord Badmintonklubb</td></tr>
+<tr><td class='uh'>Spillested/hall</td><td>Jotunhallen</td></tr>
+<tr><td class='uh'>Dato</td>
+    <td>
+        <table><tr><td  class='uh'>Fra: </td><td>19.02.2011</td><td class='uh'>Til:</td><td>19.02.2011</td></tr>
+                <tr><td class='uh'>kl.: </td><td>10:00</td><td class='uh'>ca kl.:</td><td>18:00</td></tr>
+        </table>
+    </td>
+</tr> 
+<tr><td class='uh'>NivÃ¥</td><td><table>
+<tr><td class='uh'>Aldersbestemt:</td><td>Vanlig turnering</td><tr>
+</table>
+</td></tr> 
+<tr><td class='uh'>Klasser og kategorier</td><td><table class='klasser'>
+<tr>
+<td>
+<table><tr><td class='tdk uh' colspan='3'>Aldersbestemt</td></tr>
+<tr><td class='tdk uh'>U11A</td><td class='tdk'>DS</td><td class='tdk'>HS</td></tr><tr><td class='tdk uh'>U11B</td><td class='tdk'>DS</td><td class='tdk'>HS</td></tr><tr><td class='tdk uh'>U13A</td><td class='tdk'>DS</td><td class='tdk'>HS</td></tr><tr><td class='tdk uh'>U13B</td><td class='tdk'>DS</td><td class='tdk'>HS</td></tr><tr><td class='tdk uh'>U15A</td><td class='tdk'>DS</td><td class='tdk'>HS</td></tr><tr><td class='tdk uh'>U15B</td><td class='tdk'>DS</td><td class='tdk'>HS</td></tr><tr><td class='tdk uh'>U19A</td><td class='tdk'>DS</td><td class='tdk'>HS</td></tr><tr><td class='tdk uh'>U9A</td><td class='tdk'>DS</td><td class='tdk'>HS</td></tr></table>
+</td>
+</tr>
+</table></td></tr>
+          
+ 
+<tr><td class='uh'>Klassedetaljer</td><td><table><tr><td>&nbsp;</td><td class='startkont uh'>Ball</td><td class='startkont uh'>Startkont.&nbsp;Single</td><td class='startkont uh'>Double</td></tr>
+<tr><td class='uh'>U11A</td><td>Yonex Mavis Plast</td><td class='startkont'>100.00</td><td class='startkont'>0.00</td></tr>
+<tr><td class='uh'>U11B</td><td>Yonex Mavis Plast</td><td class='startkont'>100.00</td><td class='startkont'>0.00</td></tr>
+<tr><td class='uh'>U13A</td><td>Aeroclub 07</td><td class='startkont'>150.00</td><td class='startkont'>0.00</td></tr>
+<tr><td class='uh'>U13B</td><td>Yonex Mavis Plast</td><td class='startkont'>100.00</td><td class='startkont'>0.00</td></tr>
+<tr><td class='uh'>U15A</td><td>Aeroclub 07</td><td class='startkont'>150.00</td><td class='startkont'>0.00</td></tr>
+<tr><td class='uh'>U15B</td><td>Aeroclub 07</td><td class='startkont'>150.00</td><td class='startkont'>0.00</td></tr>
+<tr><td class='uh'>U19A</td><td>Aeroclub 07</td><td class='startkont'>150.00</td><td class='startkont'>0.00</td></tr>
+<tr><td class='uh'>U9A</td><td>Yonex Mavis Plast</td><td class='startkont'>100.00</td><td class='startkont'>0.00</td></tr>
+</table>
+</td></tr>
+
+<tr><td class='uh'>Innbetalingsinfo</td><td>Ved fremmøte eller pÅ forhånd til:  Sandefjord BK, Pb.  318, 3201 Sandefjord. Kto.nr. 6272.05.18649. Vi ber om klubbvis pÅmelding og innbetaling.</td></tr>
+<tr><td class='uh'>Premieringsalternativ</td><td>3</td></tr>
+<tr><td class='uh'>PÃ¥meldingsfrist</td><td>11.02.2011</td></tr>
+<!--tr><td class='uh'>NettpÃ¥melding</td><td>ferskefjes11Sandefjordfebruar</td></tr -->
+
+<tr><td class='uh'>Kontaktinformasjon</td>
+<td>
+    <table> <tr><td></td><td class='uh'>Turneringsleder</td><td class='uh'>Oppmann</td></tr>
+            <tr><td class='uh'>Navn</td><td>Nils Gunnar Bøe</td><td>Nils Gunnar Bøe</td></tr>
+            <tr><td class='uh'>Telefon</td><td>95 21 15 03</td><td>95 21 15 02</td></tr>
+            <tr><td class='uh'>Epost</td><td>nils.gunnar.boe@dnv.com</td><td>nils.gunnar.boe@dnv.com</td></tr>
+    </table>
+</td>
+</tr>
+                                                                       
+<tr><td class='uh'>Annen info</td><td>To frie baller pr kamp.<br>
+<br>
+Det er kiosk i hallen med baguetter, pølser, vafler, drikke, etc.<br>
+<br>
+Det spilles kun single i store puljer. Best av 3 sett til 17 uten forlenging i alle klasser.<br>
+<br>
+Klasser slåes sammen ved behov.</td></tr>
+    
+</table>
+
+</body>
+</html>

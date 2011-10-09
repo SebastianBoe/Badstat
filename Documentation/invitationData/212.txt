@@ -1,0 +1,257 @@
+	
+
+<!--
+select si.ib_organisasjon, ro.ro_land 
+from soknad_innbydelse si, ranking_organisasjon ro 
+where si.ib_id = 212
+and ro.ro_id = si.ib_organisasjon-->ï»¿<!--
+select *
+from soknad_innbydelse_klasser
+where sik_siid = '212'
+and sik_orgid = 'NBF.NO.BM'--><!--
+Array
+(
+    [HSV1] => HSV1
+    [HDV1] => HDV1
+    [DSV1] => DSV1
+    [DDV1] => DDV1
+    [MDU19] => MDU19
+    [HSU19] => HSU19
+    [HDU19] => HDU19
+    [DSU19] => DSU19
+    [DDU19] => DDU19
+    [MDU17N] => MDU17N
+    [HSU17N] => HSU17N
+    [HDU17N] => HDU17N
+    [DSU17N] => DSU17N
+    [DDU17N] => DDU17N
+    [MDU17] => MDU17
+    [HSU17] => HSU17
+    [HDU17] => HDU17
+    [DSU17] => DSU17
+    [HSU15N] => HSU15N
+    [MDU15N] => MDU15N
+    [DDU17] => DDU17
+    [HDU15N] => HDU15N
+    [DSU15N] => DSU15N
+    [DDU15N] => DDU15N
+    [MDU15] => MDU15
+    [HSU15] => HSU15
+    [HDU15] => HDU15
+    [DSU15] => DSU15
+    [DDU15] => DDU15
+    [MDU13N] => MDU13N
+    [HSU13N] => HSU13N
+    [HDU13N] => HDU13N
+    [DSU13N] => DSU13N
+    [DDU13N] => DDU13N
+    [MDU13] => MDU13
+    [HSU13] => HSU13
+    [HDU13] => HDU13
+    [DSU13] => DSU13
+    [DDU13] => DDU13
+    [MDU11N] => MDU11N
+    [HSU11N] => HSU11N
+    [HDU11N] => HDU11N
+    [DSU11N] => DSU11N
+    [DDU11N] => DDU11N
+    [MDU11] => MDU11
+    [HSU11] => HSU11
+    [HDU11] => HDU11
+    [DSU11] => DSU11
+    [DDU11] => DDU11
+    [MDE] => MDE
+    [HSE] => HSE
+    [HDE] => HDE
+    [DSE] => DSE
+    [DDE] => DDE
+    [MDV1] => MDV1
+)
+--><!--
+Array
+(
+    [Senior] => Array
+        (
+            [E] => Array
+                (
+                    [DD] => DDE
+                    [DS] => DSE
+                    [HD] => HDE
+                    [HS] => HSE
+                    [MD] => MDE
+                )
+
+        )
+
+    [Veteran] => Array
+        (
+            [V1] => Array
+                (
+                    [DD] => DDV1
+                    [DS] => DSV1
+                    [HD] => HDV1
+                    [HS] => HSV1
+                    [MD] => MDV1
+                )
+
+        )
+
+)
+--><html>
+<head>
+<script src='ajax.js'></script> 
+<script type='text/javascript' src='calendar/dhtmlgoodies_calendar.js'></script>
+<script type='text/javascript' src='calendar/behaviour.js'></script>
+<script>
+action_assoc_arr = [];
+action_assoc_arr[100] = "terminliste.php";
+action_assoc_arr[101] = "../pamelding/redirect.php?tknavn=kmho10";
+action_assoc_arr[102] = "../resultater/vis.php?turn=kmho10";
+ 
+function do_act(abbr)
+{
+    act = action_assoc_arr[abbr] 
+    er_func = act.indexOf('(')
+    
+    if (er_func != -1)
+        eval(act);
+    else
+        document.location = act;
+    
+}
+
+var myrules = 
+{
+    '.menu' : function(element)
+    {
+        element.onclick = function()
+        {
+             do_act(this.id);
+        },
+        element.onmouseover = function()
+        {
+            this.style.color = '#ffff80';   
+        },
+        element.onmouseout = function()
+        {
+            this.style.color = '#ffffff';   
+        }
+    } 
+};
+
+Behaviour.register(myrules);
+
+action_assoc_arr[100] = 'terminliste.php';
+
+
+</script>
+
+<style type='text/css'>
+@import 'style/menu_style.css';
+@import 'sok_style.css';
+td
+{
+    padding-right: 15px;
+    vertical-align: top;
+}
+.startkont
+{
+    
+    text-align:right;
+}
+
+td.tdk
+{
+    padding-right: 0px;
+
+}
+#klasser_span
+{
+    display: inline;
+}
+
+.uh
+{
+    font-weight:bold;
+}
+
+</style>
+
+
+</head>
+<body>
+<div class='toparea'>
+<img src='logoer/NBF.NO.BM.png'>
+<table class='tmenu' cellspacing='0'>
+    <tr>
+        <td class='tdmenu'><span class='menu' id='100'>&nbsp;&nbsp;Terminliste</span>
+        <span class='menu' id='101'>&nbsp;&nbsp;PÃ¥melding</span>
+        <span class='menu' id='102'>&nbsp;&nbsp;Oppsett og resultater</span>
+        </td>
+    </tr>
+    <tr>
+        <td class='sub'> &nbsp;</td>
+    </tr>
+    </table>
+</div>
+<p>
+<table>
+<form method='post' action='soknad_innbydelse_upd.php' name='skjema'>
+
+<tr><td class='uh'>Arrangement</td><td>Kretsmesterskap Hedmark Oppland</td></tr>
+<tr><td class='uh'>ArrangÃ¸r</td><td>Hamar Badmintonklubb</td></tr>
+<tr><td class='uh'>Spillested/hall</td><td>Neshallen, Stavsjø i Ringsaker</td></tr>
+<tr><td class='uh'>Dato</td>
+    <td>
+        <table><tr><td  class='uh'>Fra: </td><td>30.01.2010</td><td class='uh'>Til:</td><td>31.01.2010</td></tr>
+                <tr><td class='uh'>kl.: </td><td>0900-1900</td><td class='uh'>ca kl.:</td><td>0900-1600</td></tr>
+        </table>
+    </td>
+</tr> 
+<tr><td class='uh'>NivÃ¥</td><td><table>
+<tr><td class='uh'>Aldersbestemt:</td><td>Vanlig turnering</td><tr>
+<tr><td class='uh'>Senior:</td><td>A, B, C, D og E</td><tr>
+<tr><td class='uh'>Veteran:</td><td>Vanlig turnering</td><tr>
+</table>
+</td></tr> 
+<tr><td class='uh'>Klasser og kategorier</td><td><table class='klasser'>
+<tr>
+<td>
+<table><tr><td class='tdk uh' colspan='6'>Senior</td></tr>
+<tr><td class='tdk uh'>E</td><td class='tdk'>DD</td><td class='tdk'>DS</td><td class='tdk'>HD</td><td class='tdk'>HS</td><td class='tdk'>MD</td></tr></table>
+</td>
+<td>
+<table><tr><td class='tdk uh' colspan='6'>Veteran</td></tr>
+<tr><td class='tdk uh'>V1</td><td class='tdk'>DD</td><td class='tdk'>DS</td><td class='tdk'>HD</td><td class='tdk'>HS</td><td class='tdk'>MD</td></tr></table>
+</td>
+</tr>
+</table></td></tr>
+          
+ 
+<tr><td class='uh'>Klassedetaljer</td><td><table><tr><td>&nbsp;</td><td class='startkont uh'>Ball</td><td class='startkont uh'>Startkont.&nbsp;Single</td><td class='startkont uh'>Double</td></tr>
+<tr><td class='uh'>E</td><td>Forza Tournament</td><td class='startkont'>140.00</td><td class='startkont'>180.00</td></tr>
+<tr><td class='uh'>V1</td><td>Forza Tournament</td><td class='startkont'>140.00</td><td class='startkont'>180.00</td></tr>
+</table>
+</td></tr>
+
+<tr><td class='uh'>Innbetalingsinfo</td><td>Til Hamar badmintonklubbv/ Ole Jacob NilsenHunnsveien 60C2819 GjøvikKonto: 1800 14 87368</td></tr>
+<tr><td class='uh'>Premieringsalternativ</td><td>3a</td></tr>
+<tr><td class='uh'>PÃ¥meldingsfrist</td><td>12.01.2010</td></tr>
+<!--tr><td class='uh'>NettpÃ¥melding</td><td>kmho10</td></tr -->
+
+<tr><td class='uh'>Kontaktinformasjon</td>
+<td>
+    <table> <tr><td></td><td class='uh'>Turneringsleder</td><td class='uh'>Oppmann</td></tr>
+            <tr><td class='uh'>Navn</td><td>Ragnar Sund</td><td>Tore Michaelsen</td></tr>
+            <tr><td class='uh'>Telefon</td><td>62358916</td><td>91630586</td></tr>
+            <tr><td class='uh'>Epost</td><td>ra-su@online.no</td><td></td></tr>
+    </table>
+</td>
+</tr>
+                                                                       
+<tr><td class='uh'>Annen info</td><td>Bli med å invie den nye og delikate Neshallen til badminton. Kanskje kan turneringen gi en spire til en ny klubb?Arrangøren holder inntil 2 baller pr. kamp. Spillerne holder baller utover det. Hele rør fås kjøpt i hallen.Overnattingsforslag: Mjøsa ferie og fritid tlf. 62359800, www.mjosaferie.no Arrangør kan på forespørsel formidle kontakt for ev. skoleovernatting.</td></tr>
+    
+</table>
+
+</body>
+</html>

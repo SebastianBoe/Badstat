@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+    <form method="get" name="search" action="http://localhost:8000/" >
+        <input id="search_field_id" type="text" name="q"{% if query %}value="{{ query }}"{% endif %} size="50">
+        <input type="submit" value="Search">
+    </form>
+
+    {% if query %}You searched for "{{ query }}"{% endif %}
+    
+    {% block results %}{% endblock %}
+{% endblock %}

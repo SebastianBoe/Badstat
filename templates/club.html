@@ -1,0 +1,15 @@
+{% extends 'search_form.html' %}
+{% load custom_tags_and_filters %}
+
+{% block results %}
+    <h2> {{ club.name }}</h2>
+
+    <p>Har holdt følgende turneringer</p>
+    
+    <ul>
+    {% for tournament in club.tournaments.all %}
+        <li>{{ tournament.name|redirect:tournament.description|safe }}</li>
+    {% endfor %}
+    </ul>
+    
+{% endblock %}

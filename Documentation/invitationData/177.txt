@@ -1,0 +1,174 @@
+	
+
+<!--
+select si.ib_organisasjon, ro.ro_land 
+from soknad_innbydelse si, ranking_organisasjon ro 
+where si.ib_id = 177
+and ro.ro_id = si.ib_organisasjon-->ï»¿<!--
+select *
+from soknad_innbydelse_klasser
+where sik_siid = '177'
+and sik_orgid = 'NBF.NO.BM'--><!--
+Array
+(
+    [MDU19] => MDU19
+    [HSU19] => HSU19
+    [HDU19] => HDU19
+    [DSU19] => DSU19
+    [DDU19] => DDU19
+    [MDU15] => MDU15
+    [HSU15] => HSU15
+    [HDU15] => HDU15
+    [DSU15] => DSU15
+    [DDU15] => DDU15
+)
+--><!--
+Array
+(
+)
+--><html>
+<head>
+<script src='ajax.js'></script> 
+<script type='text/javascript' src='calendar/dhtmlgoodies_calendar.js'></script>
+<script type='text/javascript' src='calendar/behaviour.js'></script>
+<script>
+action_assoc_arr = [];
+action_assoc_arr[100] = "terminliste.php";
+action_assoc_arr[101] = "../pamelding/redirect.php?tknavn=ottaranking2009";
+action_assoc_arr[102] = "../resultater/vis.php?turn=ottaranking2009";
+ 
+function do_act(abbr)
+{
+    act = action_assoc_arr[abbr] 
+    er_func = act.indexOf('(')
+    
+    if (er_func != -1)
+        eval(act);
+    else
+        document.location = act;
+    
+}
+
+var myrules = 
+{
+    '.menu' : function(element)
+    {
+        element.onclick = function()
+        {
+             do_act(this.id);
+        },
+        element.onmouseover = function()
+        {
+            this.style.color = '#ffff80';   
+        },
+        element.onmouseout = function()
+        {
+            this.style.color = '#ffffff';   
+        }
+    } 
+};
+
+Behaviour.register(myrules);
+
+action_assoc_arr[100] = 'terminliste.php';
+
+
+</script>
+
+<style type='text/css'>
+@import 'style/menu_style.css';
+@import 'sok_style.css';
+td
+{
+    padding-right: 15px;
+    vertical-align: top;
+}
+.startkont
+{
+    
+    text-align:right;
+}
+
+td.tdk
+{
+    padding-right: 0px;
+
+}
+#klasser_span
+{
+    display: inline;
+}
+
+.uh
+{
+    font-weight:bold;
+}
+
+</style>
+
+
+</head>
+<body>
+<div class='toparea'>
+<img src='logoer/NBF.NO.BM.png'>
+<table class='tmenu' cellspacing='0'>
+    <tr>
+        <td class='tdmenu'><span class='menu' id='100'>&nbsp;&nbsp;Terminliste</span>
+        <span class='menu' id='101'>&nbsp;&nbsp;PÃ¥melding</span>
+        <span class='menu' id='102'>&nbsp;&nbsp;Oppsett og resultater</span>
+        </td>
+    </tr>
+    <tr>
+        <td class='sub'> &nbsp;</td>
+    </tr>
+    </table>
+</div>
+<p>
+<table>
+<form method='post' action='soknad_innbydelse_upd.php' name='skjema'>
+
+<tr><td class='uh'>Arrangement</td><td>November Ranking U15 + U19</td></tr>
+<tr><td class='uh'>ArrangÃ¸r</td><td>Pillarguri Badmintonklubb</td></tr>
+<tr><td class='uh'>Spillested/hall</td><td>Ottahallen</td></tr>
+<tr><td class='uh'>Dato</td>
+    <td>
+        <table><tr><td  class='uh'>Fra: </td><td>21.11.2009</td><td class='uh'>Til:</td><td>22.11.2009</td></tr>
+                <tr><td class='uh'>kl.: </td><td>09.00</td><td class='uh'>ca kl.:</td><td>16.00</td></tr>
+        </table>
+    </td>
+</tr> 
+<tr><td class='uh'>NivÃ¥</td><td><table>
+<tr><td class='uh'>Aldersbestemt:</td><td>Ranking U13-19, Svenske</td><tr>
+</table>
+</td></tr> 
+<tr><td class='uh'>Klasser og kategorier</td><td><table class='klasser'>
+<tr>
+</tr>
+</table></td></tr>
+          
+ 
+<tr><td class='uh'>Klassedetaljer</td><td><table><tr><td>&nbsp;</td><td class='startkont uh'>Ball</td><td class='startkont uh'>Startkont.&nbsp;Single</td><td class='startkont uh'>Double</td></tr>
+</table>
+</td></tr>
+
+<tr><td class='uh'>Innbetalingsinfo</td><td>Innbetaling:   Faktura sendes klubbene etter at trekning er foretatt og betales til:Pillarguri Badmintonklubb v/Iren Dahl Fossmo  Koldalen 10,  2670 Otta. Kto.nr. 2105.07.28681.</td></tr>
+<tr><td class='uh'>Premieringsalternativ</td><td>3A</td></tr>
+<tr><td class='uh'>PÃ¥meldingsfrist</td><td>06.11.2009</td></tr>
+<!--tr><td class='uh'>NettpÃ¥melding</td><td>ottaranking2009</td></tr -->
+
+<tr><td class='uh'>Kontaktinformasjon</td>
+<td>
+    <table> <tr><td></td><td class='uh'>Turneringsleder</td><td class='uh'>Oppmann</td></tr>
+            <tr><td class='uh'>Navn</td><td>Dag Gården</td><td>Ivan Christensen</td></tr>
+            <tr><td class='uh'>Telefon</td><td>95157752</td><td>98250616</td></tr>
+            <tr><td class='uh'>Epost</td><td>dgaar@online.no</td><td>ivan@bergenbk.no</td></tr>
+    </table>
+</td>
+</tr>
+                                                                       
+<tr><td class='uh'>Annen info</td><td>2 baller pr. kamp, frie baller i finaler.Vanlige kioskvarer i hallen.Praktiske spørsmål før turneringshelga, som ikke har med trekning å gjøre? Ring May Knarud Ulmo,  99108551.Forslag til overnatting: Otta Motell og camping tlf. 61230309, Otta Turistsenter tlf. 61230323,  Grand Gjestegård tlf. 61231200, Norlandia Otta Hotell  tlf. 61210800.Vi ønsker velkommen til Gudbrandsdalen og byen ved Rondane.</td></tr>
+    
+</table>
+
+</body>
+</html>

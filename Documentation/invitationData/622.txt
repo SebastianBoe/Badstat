@@ -1,0 +1,387 @@
+	
+
+<!--
+select si.ib_organisasjon, ro.ro_land 
+from soknad_innbydelse si, ranking_organisasjon ro 
+where si.ib_id = 622
+and ro.ro_id = si.ib_organisasjon-->﻿<!--
+select *
+from soknad_innbydelse_klasser
+where sik_siid = '622'
+and sik_orgid = 'NBF.NO.BM'--><!--
+Array
+(
+    [HDU9A] => HDU9A
+    [DSU9A] => DSU9A
+    [DDU9A] => DDU9A
+    [MDU11A] => MDU11A
+    [HSU11A] => HSU11A
+    [HDU11A] => HDU11A
+    [DSU11A] => DSU11A
+    [DDU11A] => DDU11A
+    [MDU19A] => MDU19A
+    [HSU19A] => HSU19A
+    [HDU19A] => HDU19A
+    [DSU19A] => DSU19A
+    [DDU19A] => DDU19A
+    [MDU17A] => MDU17A
+    [HSU17A] => HSU17A
+    [HDU17A] => HDU17A
+    [DSU17A] => DSU17A
+    [DDU17A] => DDU17A
+    [MDU15A] => MDU15A
+    [HSU15A] => HSU15A
+    [HDU15A] => HDU15A
+    [DSU15A] => DSU15A
+    [DDU15A] => DDU15A
+    [MDU15B] => MDU15B
+    [HSU15B] => HSU15B
+    [HDU15B] => HDU15B
+    [DSU15B] => DSU15B
+    [DDU15B] => DDU15B
+    [MDU13B] => MDU13B
+    [HSU13B] => HSU13B
+    [HDU13B] => HDU13B
+    [DSU13B] => DSU13B
+    [DDU13B] => DDU13B
+    [MDU13A] => MDU13A
+    [HSU13A] => HSU13A
+    [HDU13A] => HDU13A
+    [DSU13A] => DSU13A
+    [DDU13A] => DDU13A
+    [HSU11B] => HSU11B
+    [HDU11B] => HDU11B
+    [DSU11B] => DSU11B
+    [DDU11B] => DDU11B
+    [MDE] => MDE
+    [HSE] => HSE
+    [HDE] => HDE
+    [DSE] => DSE
+    [DDE] => DDE
+    [MDD] => MDD
+    [HSD] => HSD
+    [HDD] => HDD
+    [DSD] => DSD
+    [DDD] => DDD
+    [MDC] => MDC
+    [HSC] => HSC
+    [HDC] => HDC
+    [HSU9A] => HSU9A
+    [DSC] => DSC
+    [DDC] => DDC
+    [MDB] => MDB
+    [HSB] => HSB
+    [HDB] => HDB
+    [DSB] => DSB
+    [DDB] => DDB
+    [MDA] => MDA
+    [HSA] => HSA
+    [HDA] => HDA
+    [DSA] => DSA
+    [DDA] => DDA
+)
+--><!--
+Array
+(
+    [Senior] => Array
+        (
+            [A] => Array
+                (
+                    [DD] => DDA
+                    [DS] => DSA
+                    [HD] => HDA
+                    [HS] => HSA
+                    [MD] => MDA
+                )
+
+            [B] => Array
+                (
+                    [DD] => DDB
+                    [DS] => DSB
+                    [HD] => HDB
+                    [HS] => HSB
+                    [MD] => MDB
+                )
+
+            [C] => Array
+                (
+                    [DD] => DDC
+                    [DS] => DSC
+                    [HD] => HDC
+                    [HS] => HSC
+                    [MD] => MDC
+                )
+
+            [D] => Array
+                (
+                    [DD] => DDD
+                    [DS] => DSD
+                    [HD] => HDD
+                    [HS] => HSD
+                    [MD] => MDD
+                )
+
+            [E] => Array
+                (
+                    [DD] => DDE
+                    [DS] => DSE
+                    [HD] => HDE
+                    [HS] => HSE
+                    [MD] => MDE
+                )
+
+        )
+
+    [Aldersbestemt] => Array
+        (
+            [U11B] => Array
+                (
+                    [DD] => DDU11B
+                    [DS] => DSU11B
+                    [HS] => HSU11B
+                    [HD] => HDU11B
+                )
+
+            [U13A] => Array
+                (
+                    [DD] => DDU13A
+                    [DS] => DSU13A
+                    [HD] => HDU13A
+                    [HS] => HSU13A
+                    [MD] => MDU13A
+                )
+
+            [U13B] => Array
+                (
+                    [DD] => DDU13B
+                    [DS] => DSU13B
+                    [HS] => HSU13B
+                    [MD] => MDU13B
+                    [HD] => HDU13B
+                )
+
+            [U15B] => Array
+                (
+                    [DD] => DDU15B
+                    [DS] => DSU15B
+                    [HD] => HDU15B
+                    [HS] => HSU15B
+                    [MD] => MDU15B
+                )
+
+            [U15A] => Array
+                (
+                    [DD] => DDU15A
+                    [DS] => DSU15A
+                    [HD] => HDU15A
+                    [HS] => HSU15A
+                    [MD] => MDU15A
+                )
+
+            [U17A] => Array
+                (
+                    [DD] => DDU17A
+                    [DS] => DSU17A
+                    [HD] => HDU17A
+                    [MD] => MDU17A
+                    [HS] => HSU17A
+                )
+
+            [U19A] => Array
+                (
+                    [DD] => DDU19A
+                    [DS] => DSU19A
+                    [HD] => HDU19A
+                    [HS] => HSU19A
+                    [MD] => MDU19A
+                )
+
+            [U11A] => Array
+                (
+                    [DS] => DSU11A
+                    [HD] => HDU11A
+                    [MD] => MDU11A
+                    [HS] => HSU11A
+                    [DD] => DDU11A
+                )
+
+            [U9A] => Array
+                (
+                    [DD] => DDU9A
+                    [DS] => DSU9A
+                    [HD] => HDU9A
+                    [HS] => HSU9A
+                )
+
+        )
+
+)
+--><html>
+<head>
+<script src='ajax.js'></script> 
+<script type='text/javascript' src='calendar/dhtmlgoodies_calendar.js'></script>
+<script type='text/javascript' src='calendar/behaviour.js'></script>
+<script>
+action_assoc_arr = [];
+action_assoc_arr[100] = "terminliste.php";
+action_assoc_arr[101] = "../pamelding/redirect.php?tknavn=bbkjulecupen2010";
+action_assoc_arr[102] = "../resultater/vis.php?turn=bbkjulecupen2010";
+ 
+function do_act(abbr)
+{
+    act = action_assoc_arr[abbr] 
+    er_func = act.indexOf('(')
+    
+    if (er_func != -1)
+        eval(act);
+    else
+        document.location = act;
+    
+}
+
+var myrules = 
+{
+    '.menu' : function(element)
+    {
+        element.onclick = function()
+        {
+             do_act(this.id);
+        },
+        element.onmouseover = function()
+        {
+            this.style.color = '#ffff80';   
+        },
+        element.onmouseout = function()
+        {
+            this.style.color = '#ffffff';   
+        }
+    } 
+};
+
+Behaviour.register(myrules);
+
+action_assoc_arr[100] = 'terminliste.php';
+
+
+</script>
+
+<style type='text/css'>
+@import 'style/menu_style.css';
+@import 'sok_style.css';
+td
+{
+    padding-right: 15px;
+    vertical-align: top;
+}
+.startkont
+{
+    
+    text-align:right;
+}
+
+td.tdk
+{
+    padding-right: 0px;
+
+}
+#klasser_span
+{
+    display: inline;
+}
+
+.uh
+{
+    font-weight:bold;
+}
+
+</style>
+
+
+</head>
+<body>
+<div class='toparea'>
+<img src='logoer/NBF.NO.BM.png'>
+<table class='tmenu' cellspacing='0'>
+    <tr>
+        <td class='tdmenu'><span class='menu' id='100'>&nbsp;&nbsp;Terminliste</span>
+        <span class='menu' id='101'>&nbsp;&nbsp;Påmelding</span>
+        <span class='menu' id='102'>&nbsp;&nbsp;Oppsett og resultater</span>
+        </td>
+    </tr>
+    <tr>
+        <td class='sub'> &nbsp;</td>
+    </tr>
+    </table>
+</div>
+<p>
+<table>
+<form method='post' action='soknad_innbydelse_upd.php' name='skjema'>
+
+<tr><td class='uh'>Arrangement</td><td>Julecupen 2010</td></tr>
+<tr><td class='uh'>Arrangør</td><td>Bergen Badmintonklubb</td></tr>
+<tr><td class='uh'>Spillested/hall</td><td>Tertnes Badmintonhall</td></tr>
+<tr><td class='uh'>Dato</td>
+    <td>
+        <table><tr><td  class='uh'>Fra: </td><td>27.12.2010</td><td class='uh'>Til:</td><td>28.12.2010</td></tr>
+                <tr><td class='uh'>kl.: </td><td>10.00</td><td class='uh'>ca kl.:</td><td>18.00</td></tr>
+        </table>
+    </td>
+</tr> 
+<tr><td class='uh'>Nivå</td><td><table>
+<tr><td class='uh'>Senior:</td><td>A, B, C, D og E</td><tr>
+<tr><td class='uh'>Aldersbestemt:</td><td>Vanlig turnering</td><tr>
+</table>
+</td></tr> 
+<tr><td class='uh'>Klasser og kategorier</td><td><table class='klasser'>
+<tr>
+<td>
+<table><tr><td class='tdk uh' colspan='6'>Senior</td></tr>
+<tr><td class='tdk uh'>A</td><td class='tdk'>DD</td><td class='tdk'>DS</td><td class='tdk'>HD</td><td class='tdk'>HS</td><td class='tdk'>MD</td></tr><tr><td class='tdk uh'>B</td><td class='tdk'>DD</td><td class='tdk'>DS</td><td class='tdk'>HD</td><td class='tdk'>HS</td><td class='tdk'>MD</td></tr><tr><td class='tdk uh'>C</td><td class='tdk'>DD</td><td class='tdk'>DS</td><td class='tdk'>HD</td><td class='tdk'>HS</td><td class='tdk'>MD</td></tr><tr><td class='tdk uh'>D</td><td class='tdk'>DD</td><td class='tdk'>DS</td><td class='tdk'>HD</td><td class='tdk'>HS</td><td class='tdk'>MD</td></tr><tr><td class='tdk uh'>E</td><td class='tdk'>DD</td><td class='tdk'>DS</td><td class='tdk'>HD</td><td class='tdk'>HS</td><td class='tdk'>MD</td></tr></table>
+</td>
+<td>
+<table><tr><td class='tdk uh' colspan='6'>Aldersbestemt</td></tr>
+<tr><td class='tdk uh'>U11B</td><td class='tdk'>DD</td><td class='tdk'>DS</td><td class='tdk'>HD</td><td class='tdk'>HS</td><td class='tdk'>&nbsp</td></tr><tr><td class='tdk uh'>U13A</td><td class='tdk'>DD</td><td class='tdk'>DS</td><td class='tdk'>HD</td><td class='tdk'>HS</td><td class='tdk'>MD</td></tr><tr><td class='tdk uh'>U13B</td><td class='tdk'>DD</td><td class='tdk'>DS</td><td class='tdk'>HD</td><td class='tdk'>HS</td><td class='tdk'>MD</td></tr><tr><td class='tdk uh'>U15B</td><td class='tdk'>DD</td><td class='tdk'>DS</td><td class='tdk'>HD</td><td class='tdk'>HS</td><td class='tdk'>MD</td></tr><tr><td class='tdk uh'>U15A</td><td class='tdk'>DD</td><td class='tdk'>DS</td><td class='tdk'>HD</td><td class='tdk'>HS</td><td class='tdk'>MD</td></tr><tr><td class='tdk uh'>U17A</td><td class='tdk'>DD</td><td class='tdk'>DS</td><td class='tdk'>HD</td><td class='tdk'>HS</td><td class='tdk'>MD</td></tr><tr><td class='tdk uh'>U19A</td><td class='tdk'>DD</td><td class='tdk'>DS</td><td class='tdk'>HD</td><td class='tdk'>HS</td><td class='tdk'>MD</td></tr><tr><td class='tdk uh'>U11A</td><td class='tdk'>DD</td><td class='tdk'>DS</td><td class='tdk'>HD</td><td class='tdk'>HS</td><td class='tdk'>MD</td></tr><tr><td class='tdk uh'>U9A</td><td class='tdk'>DD</td><td class='tdk'>DS</td><td class='tdk'>HD</td><td class='tdk'>HS</td><td class='tdk'>&nbsp</td></tr></table>
+</td>
+</tr>
+</table></td></tr>
+          
+ 
+<tr><td class='uh'>Klassedetaljer</td><td><table><tr><td>&nbsp;</td><td class='startkont uh'>Ball</td><td class='startkont uh'>Startkont.&nbsp;Single</td><td class='startkont uh'>Double</td></tr>
+<tr><td class='uh'>A</td><td>Forza Tournament</td><td class='startkont'>90.00</td><td class='startkont'>110.00</td></tr>
+<tr><td class='uh'>B</td><td>Forza Tournament</td><td class='startkont'>90.00</td><td class='startkont'>110.00</td></tr>
+<tr><td class='uh'>C</td><td>Forza Tournament</td><td class='startkont'>90.00</td><td class='startkont'>110.00</td></tr>
+<tr><td class='uh'>D</td><td>Yonex Mavis Plast</td><td class='startkont'>70.00</td><td class='startkont'>90.00</td></tr>
+<tr><td class='uh'>E</td><td>Forza Tournament</td><td class='startkont'>90.00</td><td class='startkont'>110.00</td></tr>
+<tr><td class='uh'>U11B</td><td>Yonex Mavis Plast</td><td class='startkont'>50.00</td><td class='startkont'>70.00</td></tr>
+<tr><td class='uh'>U13A</td><td>Yonex Mavis Plast</td><td class='startkont'>50.00</td><td class='startkont'>70.00</td></tr>
+<tr><td class='uh'>U13B</td><td>Yonex Mavis Plast</td><td class='startkont'>50.00</td><td class='startkont'>70.00</td></tr>
+<tr><td class='uh'>U15B</td><td>Yonex Mavis Plast</td><td class='startkont'>70.00</td><td class='startkont'>90.00</td></tr>
+<tr><td class='uh'>U15A</td><td>Forza Tournament</td><td class='startkont'>70.00</td><td class='startkont'>90.00</td></tr>
+<tr><td class='uh'>U17A</td><td>Forza Tournament</td><td class='startkont'>90.00</td><td class='startkont'>110.00</td></tr>
+<tr><td class='uh'>U19A</td><td>Forza Tournament</td><td class='startkont'>90.00</td><td class='startkont'>110.00</td></tr>
+<tr><td class='uh'>U11A</td><td>Yonex Mavis Plast</td><td class='startkont'>50.00</td><td class='startkont'>70.00</td></tr>
+<tr><td class='uh'>U9A</td><td>Yonex Mavis Plast</td><td class='startkont'>50.00</td><td class='startkont'>70.00</td></tr>
+</table>
+</td></tr>
+
+<tr><td class='uh'>Innbetalingsinfo</td><td>Giro sendes ut i etterkant</td></tr>
+<tr><td class='uh'>Premieringsalternativ</td><td>3a</td></tr>
+<tr><td class='uh'>Påmeldingsfrist</td><td>15.12.2010</td></tr>
+<!--tr><td class='uh'>Nettpåmelding</td><td>bbkjulecupen2010</td></tr -->
+
+<tr><td class='uh'>Kontaktinformasjon</td>
+<td>
+    <table> <tr><td></td><td class='uh'>Turneringsleder</td><td class='uh'>Oppmann</td></tr>
+            <tr><td class='uh'>Navn</td><td>Ivan Christensen</td><td>Ivan Christensen</td></tr>
+            <tr><td class='uh'>Telefon</td><td>98250616</td><td>98250616</td></tr>
+            <tr><td class='uh'>Epost</td><td>ivan@bergenbk.no</td><td>ivan@bergenbk.no</td></tr>
+    </table>
+</td>
+</tr>
+                                                                       
+<tr><td class='uh'>Annen info</td><td>Opp til 2 frie baller pr. kamp. Kafeteria i hallen</td></tr>
+    
+</table>
+
+</body>
+</html>

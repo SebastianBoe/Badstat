@@ -1,0 +1,21 @@
+{% extends "search_form.html" %}
+{% load custom_tags_and_filters %}
+
+{% block results %}
+    <p>Jeg beklager men søket ditt er tvetydig.</p>
+
+    {% for queryable in queryables %}
+        {% if forloop.first %}
+            Mente du
+        {% else %}
+            Eller
+        {% endif %}
+
+        {{ queryable.id|redirect:queryable.id|safe}}?<br/>
+    {% endfor %}
+
+{% endblock %}
+
+{# comment #}
+|redirect:queryable.id|safe
+{# endcomment #}

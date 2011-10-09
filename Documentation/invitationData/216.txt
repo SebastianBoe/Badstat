@@ -1,0 +1,276 @@
+	
+
+<!--
+select si.ib_organisasjon, ro.ro_land 
+from soknad_innbydelse si, ranking_organisasjon ro 
+where si.ib_id = 216
+and ro.ro_id = si.ib_organisasjon-->ï»¿<!--
+select *
+from soknad_innbydelse_klasser
+where sik_siid = '216'
+and sik_orgid = 'NBF.NO.BM'--><!--
+Array
+(
+    [MDV7] => MDV7
+    [HSV7] => HSV7
+    [HDV7] => HDV7
+    [DSV7] => DSV7
+    [DDV7] => DDV7
+    [MDV6] => MDV6
+    [HSV6] => HSV6
+    [HDV6] => HDV6
+    [DSV6] => DSV6
+    [DDV6] => DDV6
+    [MDV5] => MDV5
+    [HSV5] => HSV5
+    [HDV5] => HDV5
+    [DSV5] => DSV5
+    [DDV5] => DDV5
+    [MDV4] => MDV4
+    [HSV4] => HSV4
+    [HDV4] => HDV4
+    [DSV4] => DSV4
+    [DDV4] => DDV4
+    [MDV3] => MDV3
+    [HSV3] => HSV3
+    [HDV3] => HDV3
+    [DSV3] => DSV3
+    [DDV3] => DDV3
+    [MDV2] => MDV2
+    [HSV2] => HSV2
+    [HDV2] => HDV2
+    [DSV2] => DSV2
+    [DDV2] => DDV2
+    [MDV1] => MDV1
+    [HSV1] => HSV1
+    [HDV1] => HDV1
+    [DSV1] => DSV1
+    [DDV1] => DDV1
+)
+--><!--
+Array
+(
+    [Veteran] => Array
+        (
+            [V1] => Array
+                (
+                    [DD] => DDV1
+                    [DS] => DSV1
+                    [HD] => HDV1
+                    [HS] => HSV1
+                    [MD] => MDV1
+                )
+
+            [V2] => Array
+                (
+                    [DD] => DDV2
+                    [DS] => DSV2
+                    [HD] => HDV2
+                    [HS] => HSV2
+                    [MD] => MDV2
+                )
+
+            [V3] => Array
+                (
+                    [DD] => DDV3
+                    [DS] => DSV3
+                    [HD] => HDV3
+                    [HS] => HSV3
+                    [MD] => MDV3
+                )
+
+            [V4] => Array
+                (
+                    [DD] => DDV4
+                    [DS] => DSV4
+                    [HD] => HDV4
+                    [HS] => HSV4
+                    [MD] => MDV4
+                )
+
+            [V5] => Array
+                (
+                    [DD] => DDV5
+                    [DS] => DSV5
+                    [HD] => HDV5
+                    [HS] => HSV5
+                    [MD] => MDV5
+                )
+
+            [V6] => Array
+                (
+                    [DD] => DDV6
+                    [DS] => DSV6
+                    [HD] => HDV6
+                    [HS] => HSV6
+                    [MD] => MDV6
+                )
+
+            [V7] => Array
+                (
+                    [DD] => DDV7
+                    [DS] => DSV7
+                    [HD] => HDV7
+                    [HS] => HSV7
+                    [MD] => MDV7
+                )
+
+        )
+
+)
+--><html>
+<head>
+<script src='ajax.js'></script> 
+<script type='text/javascript' src='calendar/dhtmlgoodies_calendar.js'></script>
+<script type='text/javascript' src='calendar/behaviour.js'></script>
+<script>
+action_assoc_arr = [];
+action_assoc_arr[100] = "terminliste.php";
+action_assoc_arr[101] = "../pamelding/redirect.php?tknavn=vm2010";
+action_assoc_arr[102] = "../resultater/vis.php?turn=vm2010";
+ 
+function do_act(abbr)
+{
+    act = action_assoc_arr[abbr] 
+    er_func = act.indexOf('(')
+    
+    if (er_func != -1)
+        eval(act);
+    else
+        document.location = act;
+    
+}
+
+var myrules = 
+{
+    '.menu' : function(element)
+    {
+        element.onclick = function()
+        {
+             do_act(this.id);
+        },
+        element.onmouseover = function()
+        {
+            this.style.color = '#ffff80';   
+        },
+        element.onmouseout = function()
+        {
+            this.style.color = '#ffffff';   
+        }
+    } 
+};
+
+Behaviour.register(myrules);
+
+action_assoc_arr[100] = 'terminliste.php';
+
+
+</script>
+
+<style type='text/css'>
+@import 'style/menu_style.css';
+@import 'sok_style.css';
+td
+{
+    padding-right: 15px;
+    vertical-align: top;
+}
+.startkont
+{
+    
+    text-align:right;
+}
+
+td.tdk
+{
+    padding-right: 0px;
+
+}
+#klasser_span
+{
+    display: inline;
+}
+
+.uh
+{
+    font-weight:bold;
+}
+
+</style>
+
+
+</head>
+<body>
+<div class='toparea'>
+<img src='logoer/NBF.NO.BM.png'>
+<table class='tmenu' cellspacing='0'>
+    <tr>
+        <td class='tdmenu'><span class='menu' id='100'>&nbsp;&nbsp;Terminliste</span>
+        <span class='menu' id='101'>&nbsp;&nbsp;PÃ¥melding</span>
+        <span class='menu' id='102'>&nbsp;&nbsp;Oppsett og resultater</span>
+        </td>
+    </tr>
+    <tr>
+        <td class='sub'> &nbsp;</td>
+    </tr>
+    </table>
+</div>
+<p>
+<table>
+<form method='post' action='soknad_innbydelse_upd.php' name='skjema'>
+
+<tr><td class='uh'>Arrangement</td><td>Veteranmesterskapet 2010</td></tr>
+<tr><td class='uh'>ArrangÃ¸r</td><td>Ålesund Badmintonklubb</td></tr>
+<tr><td class='uh'>Spillested/hall</td><td>Blindheimshallen</td></tr>
+<tr><td class='uh'>Dato</td>
+    <td>
+        <table><tr><td  class='uh'>Fra: </td><td>05.03.2010</td><td class='uh'>Til:</td><td>07.03.2010</td></tr>
+                <tr><td class='uh'>kl.: </td><td>1000-1800</td><td class='uh'>ca kl.:</td><td>1000-1600</td></tr>
+        </table>
+    </td>
+</tr> 
+<tr><td class='uh'>NivÃ¥</td><td><table>
+</table>
+</td></tr> 
+<tr><td class='uh'>Klasser og kategorier</td><td><table class='klasser'>
+<tr>
+<td>
+<table><tr><td class='tdk uh' colspan='6'>Veteran</td></tr>
+<tr><td class='tdk uh'>V1</td><td class='tdk'>DD</td><td class='tdk'>DS</td><td class='tdk'>HD</td><td class='tdk'>HS</td><td class='tdk'>MD</td></tr><tr><td class='tdk uh'>V2</td><td class='tdk'>DD</td><td class='tdk'>DS</td><td class='tdk'>HD</td><td class='tdk'>HS</td><td class='tdk'>MD</td></tr><tr><td class='tdk uh'>V3</td><td class='tdk'>DD</td><td class='tdk'>DS</td><td class='tdk'>HD</td><td class='tdk'>HS</td><td class='tdk'>MD</td></tr><tr><td class='tdk uh'>V4</td><td class='tdk'>DD</td><td class='tdk'>DS</td><td class='tdk'>HD</td><td class='tdk'>HS</td><td class='tdk'>MD</td></tr><tr><td class='tdk uh'>V5</td><td class='tdk'>DD</td><td class='tdk'>DS</td><td class='tdk'>HD</td><td class='tdk'>HS</td><td class='tdk'>MD</td></tr><tr><td class='tdk uh'>V6</td><td class='tdk'>DD</td><td class='tdk'>DS</td><td class='tdk'>HD</td><td class='tdk'>HS</td><td class='tdk'>MD</td></tr><tr><td class='tdk uh'>V7</td><td class='tdk'>DD</td><td class='tdk'>DS</td><td class='tdk'>HD</td><td class='tdk'>HS</td><td class='tdk'>MD</td></tr></table>
+</td>
+</tr>
+</table></td></tr>
+          
+ 
+<tr><td class='uh'>Klassedetaljer</td><td><table><tr><td>&nbsp;</td><td class='startkont uh'>Ball</td><td class='startkont uh'>Startkont.&nbsp;Single</td><td class='startkont uh'>Double</td></tr>
+<tr><td class='uh'>V1</td><td>Yehlex Tournament</td><td class='startkont'>250.00</td><td class='startkont'>250.00</td></tr>
+<tr><td class='uh'>V2</td><td>Yehlex Tournament</td><td class='startkont'>250.00</td><td class='startkont'>250.00</td></tr>
+<tr><td class='uh'>V3</td><td>Yehlex Tournament</td><td class='startkont'>250.00</td><td class='startkont'>250.00</td></tr>
+<tr><td class='uh'>V4</td><td>Yehlex Tournament</td><td class='startkont'>250.00</td><td class='startkont'>250.00</td></tr>
+<tr><td class='uh'>V5</td><td>Yehlex Tournament</td><td class='startkont'>250.00</td><td class='startkont'>250.00</td></tr>
+<tr><td class='uh'>V6</td><td>Yehlex Tournament</td><td class='startkont'>250.00</td><td class='startkont'>250.00</td></tr>
+<tr><td class='uh'>V7</td><td>Yehlex Tournament</td><td class='startkont'>250.00</td><td class='startkont'>250.00</td></tr>
+</table>
+</td></tr>
+
+<tr><td class='uh'>Innbetalingsinfo</td><td>Betales ved påmelding til ÅBK’s konto 3910.39.09558</td></tr>
+<tr><td class='uh'>Premieringsalternativ</td><td>I henhold til NBF</td></tr>
+<tr><td class='uh'>PÃ¥meldingsfrist</td><td>05.02.2010</td></tr>
+<!--tr><td class='uh'>NettpÃ¥melding</td><td>vm2010</td></tr -->
+
+<tr><td class='uh'>Kontaktinformasjon</td>
+<td>
+    <table> <tr><td></td><td class='uh'>Turneringsleder</td><td class='uh'>Oppmann</td></tr>
+            <tr><td class='uh'>Navn</td><td>Tore Sperre</td><td>Arne Gulbrandsen</td></tr>
+            <tr><td class='uh'>Telefon</td><td>91156366</td><td>90919053</td></tr>
+            <tr><td class='uh'>Epost</td><td>tore@solvigen.no</td><td>arnegul@online.no</td></tr>
+    </table>
+</td>
+</tr>
+                                                                       
+<tr><td class='uh'>Annen info</td><td>Ålesund Badmintonklubb 	Stiftet 21.03.1930Veteranmesterskapet 2010Norges eldste klubb, Ålesund Badmintonklubb har herved gleden av å invitere alle veteraner til årets sportslige og sosiale høydepunkt. Klubben fyller 80 år i 2010 ser frem til en rekordstor deltakelse.Overnatting:Clarion Collection				Hotel Bryggen:	Telefon 70 12 64 00, spør etter Wenche Fosse.Enkeltrom kr 795,- , dobbeltrom kr 995,- inkl. frokost, vafler/kaffe på ettermiddagen, fritt kaffe/te hele døgnet og kveldsmat med suppe som varmrett. I tillegg disponerer dere fritt vår relaxavdeling med sauna og tyrkisk bad.Hotellet ligger ca 300 m fra Teaterfabrikken hvor banketten vil være.Reservert 80 rom, valgfritt enkelt/dobbeltromScandic Hotel:	Telefon 21 61 45 25, spør etter Lars-Ove Remvik.                                               Enkeltrom kr. 795,- inkl. frokostHotellet ligger ca 200 m fra Teaterfabrikken hvor banketten vil være.                        Reservert 20 enkle rom.Rica Parken Hotel:Telefon 70 13 23 00, spør etter Trude Nybø.		Enkeltrom kr 740,- inkl. frokost og gratis trådløst nettverk.Hotellet ligger 1,2 km fra Teaterfabrikken hvor banketten vil være.Reservert 50 enkle rom.På lørdag arrangerer vi en bankett med meget spesiell underholdning og dans på Teaterfabrikken, som dere sent vil glemme. Teaterfabrikken ligger i Moloveien, nærmeste nabo til Scandic og Bryggen Hotel. Den er en kulturperle som ligger i en gammel ombygd tranfabrikk. Den ligger i den eneste gata som overlevde bybrannen i 1904. Moloveien er blitt et kunstnerstrøk med glassblåserverksted, keramikk verksted. Mange kunstmalere har etablert seg her de senere årene. Ledsagere kan om de vil få en trivelig lørdag i dette spesielle strøket.Påmelding til banketten gjøres via vår nettside www.alesundbadminton.no </td></tr>
+    
+</table>
+
+</body>
+</html>

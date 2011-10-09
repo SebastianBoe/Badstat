@@ -1,0 +1,37 @@
+{% extends "search_form.html" %}
+{% load custom_tags_and_filters %}
+
+{% block results %}
+    <p>Jeg beklager men søket ditt er tvetydig.</p>
+
+    {% for list_of_tournaments in list_of_lists_of_tournaments %}
+        {% if forloop.first %}
+            Mente du {{ list_of_tournaments.0.name }} som ble arrangert av {{ list_of_tournaments.0.host.name }}
+        {% else %}
+            Eller den arrangert av {{ list_of_tournaments.0.host.name }}
+        {% endif %}
+        {% for tournament in list_of_tournaments %}
+                {% if not forloop.last %}
+                    {{ tournament.fromDate|redirect:tournament.cupID|safe }},
+                {% else %}
+                    {% if forloop.first and forloop.last %}
+                        {{ tournament.fromDate|redirect:tournament.cupID|safe }}
+                    {% else %}
+                        eller {{ tournament.fromDate|redirect:tournament.cupID|safe }}
+                    {% endif %}
+                {% endif %}
+            {% endfor %}
+        ?<br />
+    {% endfor %}
+
+
+{% endblock %}
+
+{# comment #}
+Eksempel output
+Mente du Ferske Fjes som ble Arrangert av Askøy i 2010, 2011 eller 2012?
+Eller mente du kanskje den som ble arrangert av Sandefjord i 2011?
+
+Kjente feil:
+host finnes ikke nødvendigvis
+{# endcomment #}

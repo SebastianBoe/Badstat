@@ -1,0 +1,12 @@
+{% extends "search_form.html" %}
+{% load custom_tags_and_filters %}
+{% block title %}Turneringer{% endblock %}
+
+{% block results %}
+    <h2>Turneringer</h2>
+    <ul>
+    {% for tournament in tournaments %}
+        <li>{{ tournament.name }}</li>
+    {% endfor %}
+    </ul>
+{% endblock %}
