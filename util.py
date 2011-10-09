@@ -13,3 +13,6 @@ def getFile(url):
     file = f.read()
     f.close()
     return file
+
+def a():
+    return "hello"
