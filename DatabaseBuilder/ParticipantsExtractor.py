@@ -19,7 +19,7 @@ def extract_single_players_name(html):
     middle = '[^</]+?'
     end = '\s</td><td>'
     pattern = '(?<=%s)%s(?=%s)' % (start, middle, end)
-    return map(format_name, re.findall(pattern, html))#[format_name(name) for name in re.findall(pattern, html)]
+    return map(format_name, re.findall(pattern, html))
 
 def format_name(name):
     """
